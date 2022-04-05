@@ -1,0 +1,26 @@
+.SobreNos{
+    color: #FFF;
+}
+
+#brandname::first-letter{
+    color: rgb(255, 22, 22);
+}
+
+.align-link{
+    text-align: center;
+}
+
+#brandname{
+    font-size: 2.8rem;
+}
+
+.link-to {
+  color: #FFF;
+}
+.link-to:hover {
+   color: rgb(255, 22, 22);
+}
+
+.Icon-color{
+    color: rgb(255, 22, 22);
+}
