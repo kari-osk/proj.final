@@ -16,7 +16,7 @@ export default function App(){
     <BrowserRouter>
       <NavBar/>
       <Routes>
-        <Route path="/" element={<Initial/>} />
+        <Route path="/" element={<Home/>} />
         <Route path="/home" element={<Home/>} />
         <Route path="/details" element={<Details/>} />
         <Route path="/cart" element={<Cart/>} />
