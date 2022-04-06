@@ -1,0 +1,19 @@
+.title_footer{
+    color: rgb(255, 22, 22);
+}
+
+.link-to {
+    color: #FFF;
+}
+
+.link-to:hover {
+    color: rgb(255, 22, 22);
+}
+
+.Icon-color{
+    color: rgb(255, 22, 22);
+}
+
+.text-xs-center{
+    color: rgb(255, 255, 255);
+}
