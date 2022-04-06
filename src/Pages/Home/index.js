@@ -23,7 +23,7 @@ export default function Home() {
       }}
       mouseDragEnabled
       autoPlay
-      autoPlayInterval={2500}
+      autoPlayInterval={2000}
       disableButtonsControls
       disableDotsControls
       mouseTracking 
