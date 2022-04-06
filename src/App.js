@@ -8,6 +8,8 @@ import NavBar from "./Pages/NavBar";
 import Footer from "./Pages/Footer";
 import Cart from "./Pages/Cart";
 import Fav from "./Pages/Favoritos";
+import SobreNos from "./Pages/Sobrenos";
+import Admin from "./Pages/Administracao";
 
 
 export default function App(){
@@ -18,7 +20,9 @@ export default function App(){
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/home" element={<Home/>} />
+        <Route path="sobrenos" element={<SobreNos/>} />
         <Route path="/details" element={<Details/>} />
+        <Route path="/admin" element={<Admin/>} />
         <Route path="/cart" element={<Cart/>} />
         <Route path="/fav" element={<Fav/>} />
         <Route path="*" element={<NotFound/>} />

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav } from "react-bootstrap";
-import {BsCart3, BsHeart, BsHouseDoor, BsTelephoneFill, BsFillEnvelopeFill, BsFillPinFill} from "react-icons/bs";
+import {BsCart3, BsHeart, BsHouseDoor, BsTelephoneFill, BsFillEnvelopeFill, BsFillPinFill, BsFillEmojiSmileFill, BsFillKeyFill} from "react-icons/bs";
 
 import "./style.css";
 
@@ -29,10 +29,12 @@ export default function NavBar() {
           <Navbar.Collapse className='right-aligned'>
           <Nav className="mx-auto">
           </Nav>
-          <Nav className="mx-auto">
-            <Nav.Link className="align-link" ><BsHouseDoor className="Icon-color"/><br/><Link className="link-to" to="/home">Home</Link></Nav.Link>
-          </Nav>
           <Nav className="mx-5">
+            <Nav.Link className="align-link" ><BsHouseDoor className="Icon-color"/><br/><Link className="link-to" to="/home">Home</Link></Nav.Link>
+            <Nav.Link className="align-link" ><BsFillEmojiSmileFill className="Icon-color"/><br/><Link className="link-to" to="/sobrenos">Sobre</Link></Nav.Link>
+            <Nav.Link className="align-link" ><BsFillKeyFill className="Icon-color"/><br/><Link className="link-to" to="/admin">Admin</Link></Nav.Link>
+          </Nav>
+          <Nav className="mx-2">
             <Nav.Link className="align-link" ><BsCart3 className="Icon-color"/><br/><Link className="link-to" to="/cart">Carrinho</Link></Nav.Link>
             <Nav.Link className="align-link" ><BsHeart className="Icon-color"/><br/><Link className="link-to" to="/fav">Favoritos</Link></Nav.Link>
           </Nav>
