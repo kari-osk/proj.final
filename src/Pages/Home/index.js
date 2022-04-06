@@ -25,7 +25,7 @@ export default function Home() {
       autoPlay
       autoPlayInterval={2000}
       disableButtonsControls
-      disableDotsControls
+      controlsStrategy="alternate"
       mouseTracking 
       infinite 
       items={items} />

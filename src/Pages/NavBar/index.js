@@ -7,9 +7,9 @@ import "./style.css";
 
 export default function NavBar() {
     return (
-        <div className="NavBar">
+        <div className="NavBar bg-dark">
         <header className="App-header">
-        <Navbar bg="dark" variant="dark"
+        <Navbar className="container" bg="dark" variant="dark"
           sticky="top" expand="sm">
           <Nav className="mx-auto">
             <p className="SobreNos"><BsTelephoneFill className="Icon-color"/> (00)-0000-0000</p>
@@ -22,7 +22,7 @@ export default function NavBar() {
           </Nav>
         </Navbar>
 
-        <Navbar bg="dark" variant="dark"
+        <Navbar className="container" bg="dark" variant="dark"
           sticky="top" expand="sm">
           <Navbar.Brand id='brandname'>Mercadin</Navbar.Brand>
           <Navbar.Toggle />
