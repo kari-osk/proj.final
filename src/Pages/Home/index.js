@@ -1,7 +1,7 @@
 import Carousel from "./Carousel";
 import CardMaisVendidos from "./CardMaisVendidos";
 import CardNovos from "./CardNovos";
-import { Card, CardGroup, Button } from "react-bootstrap";
+import { CardGroup } from "react-bootstrap";
 import "./style.css";
 import Countdown from "./CountDown";
 
@@ -14,7 +14,7 @@ export default function Home(){
         </div>
 
         <div className="Novos_Title container">
-            <br/><br/><br/>
+            <br/>
             <p>Novos produtos</p>
         </div>
 
@@ -25,12 +25,12 @@ export default function Home(){
         </CardGroup>
 
         <div className="container">
-            <br/><br/><br/>
+            <br/><br/>
             <Countdown/>
         </div>
 
         <div className="Novos_Title container">
-            <br/><br/><br/>
+            <br/>
             <p>Os mais vendidos</p>
         </div>
 
@@ -40,10 +40,9 @@ export default function Home(){
           <CardMaisVendidos/>
           <CardMaisVendidos/>
         </CardGroup>
-
-
+        <br/>
 
 </div>
   
-    );
-  }
+  );
+}

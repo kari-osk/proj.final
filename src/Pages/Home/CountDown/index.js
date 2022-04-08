@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Button } from "react-bootstrap";
+import {BsAlarm} from 'react-icons/bs';
 import "./style.css";
 
 const Countdown = () => {
@@ -10,7 +12,7 @@ const Countdown = () => {
   let interval = useRef();
 
   const startTimer = () => {
-    const countDownDate = new Date("April 8, 2022 00:00:00").getTime();
+    const countDownDate = new Date("April 8, 2022 23:59:59").getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();
@@ -46,11 +48,9 @@ const Countdown = () => {
     <section className="timer-container">
       <section className="timer">
         <div>
-          <span className="mdi mdi-calendar-clock timer-icon"></span>
-          <h2>Countdown Timer</h2>
-          <p>Vai de uma data especifica</p>
+          <h2>Promoção <BsAlarm/></h2>
         </div>
-        <div>
+        <div className="contador">
           <section>
             <p>{timerDays}</p>
             <p><small>Dias</small></p>
@@ -71,7 +71,11 @@ const Countdown = () => {
             <p><small>Segundos</small></p>
           </section>
         </div>
+        <div className="d-grid gap-2">
+        <Button className="button" variant="outline-dark" size="lg">Compre agora</Button>
+        </div>
       </section>
+      <div className="img_card"></div>
     </section>
   );
 };
