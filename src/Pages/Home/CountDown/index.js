@@ -12,7 +12,7 @@ const Countdown = () => {
   let interval = useRef();
 
   const startTimer = () => {
-    const countDownDate = new Date("April 8, 2022 23:59:59").getTime();
+    const countDownDate = new Date("April 24, 2022 23:59:59").getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();
@@ -46,6 +46,7 @@ const Countdown = () => {
 
   return (
     <section className="timer-container">
+      <div className="timer-box">
       <section className="timer">
         <div>
           <h2>Promoção <BsAlarm/></h2>
@@ -75,6 +76,7 @@ const Countdown = () => {
         <Button className="button" variant="outline-dark" size="lg">Compre agora</Button>
         </div>
       </section>
+      </div>
       <div className="img_card"></div>
     </section>
   );
