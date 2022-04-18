@@ -2,3 +2,8 @@
     font-weight: 700;
     font-size: 2.5rem;
 }
+
+.group_Maisvendido{
+    display: flex;
+    flex-direction: row;
+}

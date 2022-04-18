@@ -1,21 +1,41 @@
 import { Card, Button } from "react-bootstrap";
 import "./style.css";
+import { useEffect, useState } from "react";
+import { getAllProducts } from "../../../Service/Api";
 
 
 export default function CardNovos() {
-    return (
 
-<Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="https://images.kabum.com.br/produtos/fotos/107333/mouse-gamer-sem-fio-logitech-g-pro-wireless-lightspeed-rgb-lightsync-ambidestro-6-botoes-programaveis-hero-25k-910-005271_1644501564_gg.jpg" />
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getAllProducts().then(data => setProducts(data.content));
+  }, []);
+
+  var item = products[Math.floor(Math.random() * products.length)];
+
+    return (
+<div className="group_card container">
+{/* slice limita o número de produtos que serão exibidos */}
+{products.slice(0, 4).map((product) => (
+<Card className="box_cardNovos" style={{ width: '18rem' }} key={product.id}>
+  <div className="box_imageVovos">
+  <Card.Img className="image_novos" variant="top" src={product.image} />
+  </div>
   <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+    <Card.Title>{product.title}</Card.Title>
+    <Card.Text className="Text_price">
+      Apenas R$ {product.price}
     </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
+    <Card.Footer>
+    <div className="d-grid gap-2 Box_botao_novos">
+    <Button className="link-buy Botao_Novos" variant="outline-dark" size="lg">Comprar</Button>
+    </div>
+    </Card.Footer>
   </Card.Body>
 </Card>
+))}
+</div>
 
 );
 }

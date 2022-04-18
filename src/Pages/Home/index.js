@@ -20,8 +20,6 @@ export default function Home(){
 
         <CardGroup className="container">
           <CardNovos/>
-          <CardNovos/>
-          <CardNovos/>
         </CardGroup>
 
         <div className="container">
@@ -34,10 +32,7 @@ export default function Home(){
             <p>Os mais vendidos</p>
         </div>
 
-        <CardGroup className="container">
-          <CardMaisVendidos/>
-          <CardMaisVendidos/>
-          <CardMaisVendidos/>
+        <CardGroup className="container group_Maisvendido">
           <CardMaisVendidos/>
         </CardGroup>
         <br/>

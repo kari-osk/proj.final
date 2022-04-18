@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import "./style.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
+import api from "../../../Service/Api";
 
 const handleDragStart = (e) => e.preventDefault();
 
@@ -28,7 +29,9 @@ const items = [
   </div>,
 ];
 
+
 export default function Carousel() {
+
   return (
     <div className='container'>
     <AliceCarousel responsive={{
@@ -48,8 +51,5 @@ export default function Carousel() {
       infinite 
       items={items} />
       </div>
-
-      
-
   );
-}
+};

@@ -1,23 +1,34 @@
 import { Card, Button } from "react-bootstrap";
 import "./style.css";
+import { useEffect, useState } from "react";
+import { getAllProducts } from '../../../Service/Api';
 
 
 export default function CardMaisVendidos() {
-    return (
 
-<Card>
-    <Card.Img variant="top" src="https://img.terabyteshop.com.br/produto/g/mouse-gamer-redragon-lonewolf-2-pro-m721-rgb-32000-dpi-10-botoes-programaveis-black_90346.png" />
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getAllProducts().then(data => setProducts(data.content));
+  }, []);
+
+    return (
+  <div className="group_card container">
+  {/* slice limita o número de produtos que serão exibidos */}
+  {products.slice(0, 3).map((product) => (
+  <Card className="box_card" key={product.id}>
+    <div className="box_imageMaisvend">
+    <Card.Img className="image_maisvend" variant="top" src={product.image} />
+    </div>
     <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
-      </Card.Text>
+      <Card.Title>{product.title}</Card.Title>
+      <Card.Text>{product.description}</Card.Text>
     </Card.Body>
     <Card.Footer className="d-grid gap-2">
-    <Button className="link-buy" variant="outline-dark" size="lg">Comprar</Button>
+    <Button className="link-buy" variant="outline-dark" size="lg">Comprar por R$ {product.price}</Button>
     </Card.Footer>
   </Card>
-
+  ))}
+  </div>
 );
 }
