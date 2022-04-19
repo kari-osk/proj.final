@@ -19,7 +19,7 @@ export default function Carousel() {
     <div className='Box_carro' key={product.id}>
       <img className='image_box' src={product.image} onDragStart={handleDragStart} />
       <div className="d-grid gap-2">
-        <Button className='button' variant="outline-dark"><p className='Text_button'>Comprar por R$ {product.price}</p></Button>
+        <Button className='button_carro' variant="outline-dark">Comprar por R$ {product.price}</Button>
       </div>
     </div>
     ))

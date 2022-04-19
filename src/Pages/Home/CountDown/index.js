@@ -52,7 +52,7 @@ const Countdown = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container Box_promocao">
     {products.slice(12, 13).map((product) => (
     <section className="timer-container">
       <div className="timer-box">

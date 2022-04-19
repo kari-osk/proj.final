@@ -1,5 +1,6 @@
 .box_geral{
     background-color: rgb(255, 255, 255);
+    margin-top: 30px;
 }
 
 .image_box{
@@ -11,7 +12,11 @@
     text-align: center;
 }
 
-.Text_button{
-    font-size: 1.5rem;
-    margin-top: 6px;
+.button_carro{
+    font-size: 3.9rem;
+    font-weight: 500;
+}
+
+.button_carro:hover{
+    color: rgb(250, 27, 27);
 }

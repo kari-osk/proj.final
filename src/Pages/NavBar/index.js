@@ -36,7 +36,6 @@ export default function NavBar() {
           </Nav>
           <Nav className="mx-2">
             <Nav.Link className="align-link" ><BsCart3 className="Icon-color"/><br/><Link className="link-to" to="/cart">Carrinho</Link></Nav.Link>
-            <Nav.Link className="align-link" ><BsHeart className="Icon-color"/><br/><Link className="link-to" to="/fav">Favoritos</Link></Nav.Link>
           </Nav>
           </Navbar.Collapse>
         </Navbar>
