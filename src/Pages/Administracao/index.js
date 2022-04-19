@@ -1,4 +1,4 @@
-import './styles.css'
+import './style.css'
 import { formatMoney } from './useUtils'
 import Modal from 'react-modal'
 import { useEffect, useState } from 'react'
