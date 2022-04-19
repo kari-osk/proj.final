@@ -53,12 +53,13 @@ const Countdown = () => {
 
   return (
     <div className="container">
-    {products.slice(0, 1).map((product) => (
+    {products.slice(12, 13).map((product) => (
     <section className="timer-container">
       <div className="timer-box">
       <section className="timer">
         <div>
-          <h2>Promoção <BsAlarm/> <br></br> {product.title} </h2>
+          <h2>Promoção <BsAlarm/></h2>
+          <h2>{product.title}</h2>
         </div>
         <div className="contador">
           <section>

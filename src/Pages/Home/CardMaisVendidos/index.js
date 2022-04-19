@@ -15,7 +15,7 @@ export default function CardMaisVendidos() {
     return (
   <div className="group_card container">
   {/* slice limita o número de produtos que serão exibidos */}
-  {products.slice(0, 3).map((product) => (
+  {products.slice(4, 7).map((product) => (
   <Card className="box_card" key={product.id}>
     <div className="box_imageMaisvend">
     <Card.Img className="image_maisvend" variant="top" src={product.image} />
