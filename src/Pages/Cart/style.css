@@ -1,3 +1,7 @@
+.cart-title{
+    margin: 1em 0;
+}
+
 .container-items {
     width: 485px;
     height: 500px;
@@ -50,10 +54,12 @@
 .btn-finish {
     width: 400px;
     height: 48px;
-    background-color:#D3780C;
+    background-color:#da0909;
     border:none;
     border-radius: 6px;
+    margin-top: 5em;
 }
+
 
 .teste {
     display: flex;
@@ -69,5 +75,20 @@ p {
     margin: 0;
 }
 
+.order {
+    margin-bottom: 1em;
+}
 
+.btn-cupon {
+    width: 100px;
+    height: 30px;
+    background-color:#da0909;
+    border:none;
+    border-radius: 6px;
+    margin: 0.5em 0 6em;   
+}
+
+.order-container{
+    padding-left: 20em;
+}
 
