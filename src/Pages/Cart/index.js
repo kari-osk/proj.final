@@ -40,6 +40,10 @@ export default function Cart() {
         setSum(sum);
     }
 
+    function btncupon(){
+        alert('Cupom inválido');
+    }
+
     return (
 
         <div className="section-cart container">
@@ -84,13 +88,16 @@ export default function Cart() {
                 <div className="order-container">
                     <p className="order">Pedido</p>
                     <form>
-                        <input name="name" type="text" value="Cupom de desconto" /> <br />
+                    <label for="default0">Cupom de desconto</label>
+                    <input type="text" id="default0" class="form-control"></input>
                     </form>
-                    <button className="btn-cupon">Inserir cupom</button>
+                    <button className="btn-cupon" onClick={btncupon}>Inserir cupom</button>
                     <p className="subtotal">Subtotal: R$ {sum.toFixed(2)}</p>
                     <p className="delivery">Frete: R$ 0.00</p>
                     <p nameClass="final-value">R$ {sum.toFixed(2)}</p>
                     <button className="btn-finish">Finalizar pedido</button>
+
+                    
                 </div>
             </div>
 
