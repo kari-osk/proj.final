@@ -2,13 +2,11 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
   box-sizing: border-box;
-  color: #1a1a1a;
 }
 
 .admin {
+  font-family: "Inter", sans-serif;
   display: flex;
   flex: 1;
   min-height: 100vh;
@@ -36,7 +34,7 @@
 .button-add-product {
   width: 185px;
   height: 48px;
-  background: #ff1616;
+  background: #da0909;
   border: none;
   border-radius: 8px;
   margin-bottom: 8px;
@@ -44,9 +42,9 @@
 }
 
 .button-add-product:hover{
-  background:#FF796A;
-  border: 1px solid #2a2626;
-  color: #2a2626;
+  background:#e92d18;
+  border: 1px solid #0f0e0e;
+  color: #0f0e0e;
 }
 
 .button-icon-admin {
@@ -119,7 +117,7 @@ flex-direction: row;
 
 }
 .button-close-modal:hover{
-  background-color: #FF796A;
+  background-color: #da0909;
 }
 
 .form-h1 {
@@ -201,20 +199,20 @@ flex-direction: row;
   border-radius: 8px;
 }
 .save{
-  background: #ff1616;
+  background: #da0909;
   color: #ffffff;
 }
 .save:hover {
-  background-color: #FF796A;
-  border: 1px solid #2a2626;
-  color: #2a2626;
+  background-color: #e92d18;
+  border: 1px solid #0f0e0e;
+  color: #0f0e0e;
 }
 .cancel{
   background: #f9f8f8;
-  border: 1px solid #FF796A;
-  color:#FF796A;
+  border: 1px solid #e92d18;
+  color:#e92d18;
 }
 .cancel:hover{
-  border: 1px solid #2a2626;
-  color: #2a2626;
+  border: 1px solid #0f0e0e;
+  color: #0f0e0e;
 }
