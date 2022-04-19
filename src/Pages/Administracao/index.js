@@ -1,5 +1,5 @@
 import './styles.css'
-import { formatMoney } from './hooks/useUtils'
+import { formatMoney } from './useUtils'
 import Modal from 'react-modal'
 import { useEffect, useState } from 'react'
 import { FiEdit, FiTrash, FiX } from 'react-icons/fi'
