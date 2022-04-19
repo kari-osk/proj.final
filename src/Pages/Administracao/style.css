@@ -36,7 +36,7 @@
 .button-add-product {
   width: 185px;
   height: 48px;
-  background: #e46f21;
+  background: #ff1616;
   border: none;
   border-radius: 8px;
   margin-bottom: 8px;
@@ -44,7 +44,7 @@
 }
 
 .button-add-product:hover{
-  background:#ec8947;
+  background:#FF796A;
   border: 1px solid #2a2626;
   color: #2a2626;
 }
@@ -119,7 +119,7 @@ flex-direction: row;
 
 }
 .button-close-modal:hover{
-  background-color: #ec8947;
+  background-color: #FF796A;
 }
 
 .form-h1 {
@@ -201,18 +201,18 @@ flex-direction: row;
   border-radius: 8px;
 }
 .save{
-  background: #e46f21;
+  background: #ff1616;
   color: #ffffff;
 }
 .save:hover {
-  background-color: #ec8947;
+  background-color: #FF796A;
   border: 1px solid #2a2626;
   color: #2a2626;
 }
 .cancel{
   background: #f9f8f8;
-  border: 1px solid #ec8947;
-  color:#ec8947;
+  border: 1px solid #FF796A;
+  color:#FF796A;
 }
 .cancel:hover{
   border: 1px solid #2a2626;
