@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import {BsAlarm} from 'react-icons/bs';
 import "./style.css";
+import { getAllProducts } from "../../../Service/Api";
 
 const Countdown = () => {
   const [timerDays, setTimerDays] = useState('00');
@@ -12,7 +13,7 @@ const Countdown = () => {
   let interval = useRef();
 
   const startTimer = () => {
-    const countDownDate = new Date("April 24, 2022 23:59:59").getTime();
+    const countDownDate = new Date("April 27, 2022 23:59:59").getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();
@@ -44,12 +45,20 @@ const Countdown = () => {
     return () => clearInterval(interval.current);
   });
 
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getAllProducts().then(data => setProducts(data.content));
+  }, []);
+
   return (
+    <div className="container">
+    {products.slice(0, 1).map((product) => (
     <section className="timer-container">
       <div className="timer-box">
       <section className="timer">
         <div>
-          <h2>Promoção <BsAlarm/></h2>
+          <h2>Promoção <BsAlarm/> <br></br> {product.title} </h2>
         </div>
         <div className="contador">
           <section>
@@ -73,12 +82,16 @@ const Countdown = () => {
           </section>
         </div>
         <div className="d-grid gap-2">
-        <Button className="button" variant="outline-dark" size="lg">Compre agora</Button>
+        <Button className="button" variant="outline-dark" size="lg">Compre agora por R$ {product.price}</Button>
         </div>
       </section>
       </div>
-      <div className="img_card"></div>
+      <div className="img_card">
+        <img className="imagem_count" src={product.image}></img>
+      </div>
     </section>
+    ))}
+    </div>
   );
 };
 

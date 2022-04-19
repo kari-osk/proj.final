@@ -7,3 +7,7 @@
     display: flex;
     flex-direction: row;
 }
+
+.tudo_home{
+    /* background-image: linear-gradient(to bottom right, rgba(208, 37, 37, 0.817), rgba(229, 255, 0, 0.463) ,rgb(208, 37, 37, 0.817)); */
+}

@@ -4,11 +4,19 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 import "./style.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
-import api from "../../../Service/Api";
+import { getAllProducts } from "../../../Service/Api";
 
-const handleDragStart = (e) => e.preventDefault();
 
-const items = [
+export default function Carousel() {
+
+  const [products, setProducts] = useState([]);
+  const handleDragStart = (e) => e.preventDefault();
+
+  useEffect(() => {
+    getAllProducts().then(data => setProducts(data.content));
+  }, []);
+
+/* const items = [
   <div>
     <img className='image_box' src="https://www.sony.pt/image/57f06d3e66ee7ef1a085e16c5e45bc40?fmt=png-alpha&wid=440" onDragStart={handleDragStart} />
     <div className="d-grid gap-2">
@@ -27,29 +35,44 @@ const items = [
       <Button className='button' variant="outline-dark">Comprar</Button>
     </div>
   </div>,
-];
-
-
-export default function Carousel() {
+]; */
 
   return (
-    <div className='container'>
-    <AliceCarousel responsive={{
+
+    
+    <div className='container box_geral'>
+    {products.slice(0, 1).map((product) => (
+    <AliceCarousel 
+    responsive={{
         0: {
           items: 1
-        },
-        1024: {
-          items: 3
         }
       }}
       mouseDragEnabled
       autoPlay
       autoPlayInterval={2000}
-      disableButtonsControls
-      controlsStrategy="alternate"
+      disableButtonsControls={true}
+      disableDotsControls={false}
       mouseTracking 
-      infinite 
-      items={items} />
+      infinite>
+
+      <div className='Box_carro' key={product.id}>
+        <img className='image_box' src={product.image} onDragStart={handleDragStart} />
+        <div className="d-grid gap-2">
+          <Button className='button' variant="outline-dark"><p className='Text_button'>Comprar por R$ {product.price}</p></Button>
+        </div>
       </div>
+      <div className='Box_carro' key={product.id}>
+        <img className='image_box' src={product.image} onDragStart={handleDragStart} />
+        <div className="d-grid gap-2">
+          <Button className='button' variant="outline-dark"><p className='Text_button'>Comprar por R$ {product.price}</p></Button>
+        </div>
+      </div>
+      
+        
+      </AliceCarousel>
+      ))}
+      </div>
+
   );
 };

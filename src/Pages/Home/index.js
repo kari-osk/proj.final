@@ -7,7 +7,7 @@ import Countdown from "./CountDown";
 
 export default function Home(){
     return(
-<div>
+<div className="tudo_home">
 
         <div>
         <Carousel/>
