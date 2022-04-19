@@ -67,8 +67,8 @@ export default function SobreNos() {
             <hr/>
             <Card.Title id = "nome">{name}</Card.Title>
             <Card.Subtitle id = "cargo" className="mb-2">Fullstack Developer</Card.Subtitle>
-            <Card.Link className="link-to" href= {github} target="_blank" id='mygit' ><BsGithub className="Icon-color" /></Card.Link>
-            <Card.Link className="link-to" href= {linkedin} target="_blank" id='mylinkedin' ><BsLinkedin className="Icon-color" /></Card.Link>
+            <Card.Link className="link-to" href= {github} target="_blank" id='mygit' ><BsGithub className="Icon-color1" /></Card.Link>
+            <Card.Link className="link-to" href= {linkedin} target="_blank" id='mylinkedin' ><BsLinkedin className="Icon-color1" /></Card.Link>
             </Card.Body>
           </Card>
         ))}
