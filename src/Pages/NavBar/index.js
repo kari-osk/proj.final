@@ -13,9 +13,9 @@ export default function NavBar() {
   const handleShow = () => setShow(true);
 
   return (
-    <div className="NavBar bg-dark">
+    <div className="NavBar">
       <header className="App-header">
-        <Navbar className="container" bg="dark" variant="dark"
+        <Navbar className="container"  variant="dark"
           expand="sm">
           <Nav className="mx-auto">
             <p className="SobreNos"><BsTelephoneFill className="Icon-color" /> (00)-0000-0000</p>
@@ -28,7 +28,7 @@ export default function NavBar() {
           </Nav>
         </Navbar>
 
-        <Navbar className="container" bg="dark" variant="dark"
+        <Navbar className="container" variant="dark"
           sticky="top" expand="sm">
           <Navbar.Brand>
             <Link className="link-to" to="/home"><img className="merc_logo" src={merc} alt="Logo Merch Tech" /></Link>
@@ -55,12 +55,12 @@ export default function NavBar() {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <div>
-            <FormLabel to="#login">Username</FormLabel>
-            <FormControl id="login" placeholder="Login"/>
+              <FormLabel to="#login">Username</FormLabel>
+              <FormControl id="login" placeholder="Login" />
             </div>
             <div>
-            <FormLabel>Passoword</FormLabel>
-            <FormControl placeholder="Password"/>
+              <FormLabel>Passoword</FormLabel>
+              <FormControl placeholder="Password" />
             </div>
             <Link to="/admin">
               <Button onClick={handleClose} Button>Entrar</Button>

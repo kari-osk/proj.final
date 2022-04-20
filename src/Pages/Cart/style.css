@@ -41,7 +41,6 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.24);
 }
 
-
 .btn-finish {
     width: 400px;
     height: 48px;
@@ -52,7 +51,6 @@
     color:var(--Cinza);
     font-size: 0.9rem;
 }
-
 
 .teste {
     display: flex;
