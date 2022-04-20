@@ -3,6 +3,7 @@ import "./style.css";
 import { useEffect, useState, useContext } from "react";
 import { getAllProducts } from '../../../Service/Api';
 import { CartContext } from "../../Cart/context/cart";
+import { Link } from "react-router-dom";
 
 
 export default function CardMaisVendidos() {
@@ -28,7 +29,9 @@ export default function CardMaisVendidos() {
       <Card.Text>{product.description}</Card.Text>
     </Card.Body>
     <Card.Footer className="d-grid gap-2">
-    <Button onClick={() => addProducToCart(product.id, product.image)} className="link-buy" variant="outline-dark" size="lg">Comprar por R$ {product.price}</Button>
+      <Link to={`/details/${product.id}`}>
+        <Button className="link-buy" variant="outline-dark" size="lg">Comprar por R$ {product.price}</Button>
+      </Link>
     </Card.Footer>
   </Card>
   ))}

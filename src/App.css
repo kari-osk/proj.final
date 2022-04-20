@@ -7,6 +7,10 @@
     font-family: 'Nunito', sans-serif;
 }
 
+a{
+    text-decoration: none;
+}
+
 :root {
     --VermelhoForte: #B82216;
     --VermelhoFraco: #FE2F18;
