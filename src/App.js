@@ -1,4 +1,7 @@
 import { BrowserRouter, Routes, Route} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import CartProvider from "../src/Pages/Cart/context/cart";
+
 
 import Home from "./Pages/Home";
 import Initial from "./Pages/Initial";
@@ -14,7 +17,7 @@ import Admin from "./Pages/Administracao";
 
 export default function App(){
   return(
-
+  <CartProvider> 
     <BrowserRouter>
       <NavBar/>
       <Routes>
@@ -29,6 +32,7 @@ export default function App(){
       </Routes>
       <Footer/>
     </BrowserRouter>
+  </CartProvider>   
 
   );
 }

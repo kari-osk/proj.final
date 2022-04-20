@@ -1,0 +1,100 @@
+.cart-title{
+    margin: 1em 0;
+}
+
+.container-items {
+    width: 485px;
+    height: 500px;
+    overflow: hidden;
+    overflow-y: scroll;
+    
+}
+
+.container-items .cart {
+    border:none;
+    display:flex;
+    align-items:end;
+    font-size: 0.7rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+    padding-bottom: 10px;
+}
+
+.container-items .cart button {
+    height: 40px;
+    border: none;
+    color: grey;
+    background: #fff;  
+}
+.cart-image {
+    width: 150px;
+}
+
+.return-policy .p1 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+    font-weight: 600;
+    margin: 1em 0;
+}
+
+.p2, .p3, .order, .subtotal, .delivery, .item-title  {
+    font-weight: 700;    
+}
+
+.p3{
+    margin-top: 10px;
+}
+
+.delivery {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+}
+
+
+.section-cart {
+    margin-left: 30px;
+}
+
+.btn-finish {
+    width: 400px;
+    height: 48px;
+    background-color:#da0909;
+    border:none;
+    border-radius: 6px;
+    margin-top: 5em;
+    color:rgb(235, 232, 232);
+    font-size: 0.9rem;
+}
+
+
+.teste {
+    display: flex;
+    flex-direction: column;  
+    justify-content: space-around;
+    text-align: justify;
+}
+
+.teste2 {
+    display: flex;
+}
+
+p {
+    margin: 0;
+}
+
+.order {
+    margin-bottom: 1em;
+}
+
+.btn-cupon {
+    width: 100px;
+    height: 30px;
+    font-size: 0.8rem;
+    background-color:#da0909;
+    border:none;
+    border-radius: 6px;
+    margin: 0.5em 0 6em; 
+    color:rgb(235, 232, 232);  
+}
+
+.order-container{
+    padding-left: 20em;
+}
+
