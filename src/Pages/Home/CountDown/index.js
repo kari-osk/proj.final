@@ -70,17 +70,17 @@ const Countdown = () => {
             <p>{timerDays}</p>
             <p><small>Dias</small></p>
           </section>
-          <span>:</span>
+          <span className="span_timer">:</span>
           <section>
             <p>{timerHours}</p>
             <p><small>Horas</small></p>
           </section>
-          <span>:</span>
+          <span className="span_timer">:</span>
           <section>
             <p>{timerMinutes}</p>
             <p><small>Minutos</small></p>
           </section>
-          <span>:</span>
+          <span className="span_timer">:</span>
           <section>
             <p>{timerSeconds}</p>
             <p><small>Segundos</small></p>

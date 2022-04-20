@@ -3,10 +3,6 @@
     color: white;
 }
 
-* {
-    box-sizing: border-box;
-  }
-
   .container-main{
     display: flex;
     flex-direction: column;

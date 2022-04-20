@@ -7,7 +7,7 @@ import astronauta from "./assets/astronauta.svg";
 
 export default function NotFound() {
 
-    let [time, setTime] = useState(10);
+    let [time, setTime] = useState(15);
   
     useEffect(()=>{
      
@@ -156,7 +156,7 @@ export default function NotFound() {
           <div className="denied__wrapper">
             <h1>404</h1>
             <h3>
-              Está perido na <span>LOJA</span> Mercadinho? Hmm, parece que está pagina não existe.
+              Está perido na <span>LOJA</span> Merc Tech? Hmm, parece que está pagina não existe.
             </h3>
             <img className="saturn" id="astronaut" src={astronauta} alt="Astronauta" />
             <img className="saturn" src={planeta} alt="Planeta vermelho, com estralas ao redor" />
