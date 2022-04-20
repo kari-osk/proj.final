@@ -1,10 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import { Button } from "react-bootstrap";
 import {BsAlarm} from 'react-icons/bs';
 import "./style.css";
 import { getAllProducts } from "../../../Service/Api";
+import { CartContext } from "../../Cart/context/cart";
 
 const Countdown = () => {
+
+  const { productsCart, addProducToCart, removeProductToCart } = useContext(CartContext);
+
   const [timerDays, setTimerDays] = useState('00');
   const [timerHours, setTimerHours] = useState('00');
   const [timerMinutes, setTimerMinutes] = useState('00');
@@ -83,7 +87,7 @@ const Countdown = () => {
           </section>
         </div>
         <div className="d-grid gap-2">
-        <Button className="button" variant="outline-dark" size="lg">Compre agora por R$ {product.price}</Button>
+        <Button onClick={() => addProducToCart(product.id, product.image)} className="button" variant="outline-dark" size="lg">Compre agora por R$ {product.price}</Button>
         </div>
       </section>
       </div>

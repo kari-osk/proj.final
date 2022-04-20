@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import "./style.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import { getAllProducts } from "../../../Service/Api";
+import { CartContext } from "../../Cart/context/cart";
 
 export default function Carousel() {
+
+  const { productsCart, addProducToCart, removeProductToCart } = useContext(CartContext);
 
   const [products, setProducts] = useState([]);
   const handleDragStart = (e) => e.preventDefault();
@@ -19,7 +22,7 @@ export default function Carousel() {
     <div className='Box_carro' key={product.id}>
       <img className='image_box' src={product.image} onDragStart={handleDragStart} />
       <div className="d-grid gap-2">
-        <Button className='button_carro' variant="outline-dark">Comprar por R$ {product.price}</Button>
+        <Button onClick={() => addProducToCart(product.id, product.image)} className='button_carro' variant="outline-dark">Comprar por R$ {product.price}</Button>
       </div>
     </div>
     ))

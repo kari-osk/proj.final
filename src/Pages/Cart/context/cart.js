@@ -12,8 +12,10 @@ export default function CartProvider({ children }) {
 
     if (item.length > 0) {
       item[0].quantity = item[0].quantity + 1;
+      alert("Adicionado ao carrinho novamente!");
     } else {
       copyProductsCart.push({ id: id, quantity: 1});
+      alert("Adicionado ao carrinho");
     }
     console.log(copyProductsCart);
     
@@ -29,6 +31,7 @@ export default function CartProvider({ children }) {
       if (item[0].quantity > 1) {
         item[0].quantity = item[0].quantity - 1;
         setProductsCart(copyProductsCart);
+        alert("item retirado do carrinho");
       } else {
         const arrayFilterd = copyProductsCart.filter(
           (product) => product.id !== id

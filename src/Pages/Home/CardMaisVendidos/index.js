@@ -1,10 +1,13 @@
 import { Card, Button } from "react-bootstrap";
 import "./style.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { getAllProducts } from '../../../Service/Api';
+import { CartContext } from "../../Cart/context/cart";
 
 
 export default function CardMaisVendidos() {
+
+  const { productsCart, addProducToCart, removeProductToCart } = useContext(CartContext);
 
   const [products, setProducts] = useState([]);
 
@@ -25,7 +28,7 @@ export default function CardMaisVendidos() {
       <Card.Text>{product.description}</Card.Text>
     </Card.Body>
     <Card.Footer className="d-grid gap-2">
-    <Button className="link-buy" variant="outline-dark" size="lg">Comprar por R$ {product.price}</Button>
+    <Button onClick={() => addProducToCart(product.id, product.image)} className="link-buy" variant="outline-dark" size="lg">Comprar por R$ {product.price}</Button>
     </Card.Footer>
   </Card>
   ))}
