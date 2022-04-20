@@ -45,11 +45,11 @@
 .btn-finish {
     width: 400px;
     height: 48px;
-    background-color:#da0909;
+    background-color: var(--VermelhoForte);
     border:none;
     border-radius: 6px;
     margin-top: 5em;
-    color:rgb(235, 232, 232);
+    color:var(--Cinza);
     font-size: 0.9rem;
 }
 
@@ -77,11 +77,11 @@ p {
     width: 100px;
     height: 30px;
     font-size: 0.8rem;
-    background-color:#da0909;
+    background-color:var(--VermelhoForte);
     border:none;
     border-radius: 6px;
     margin: 0.5em 0 6em; 
-    color:rgb(235, 232, 232);  
+    color:var(--Cinza); 
 }
 
 
@@ -181,6 +181,13 @@ p {
     margin-top: 2em;
     margin-bottom: 2em;
 }
+
+.subtotal , .delivery {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+
 
 
 
