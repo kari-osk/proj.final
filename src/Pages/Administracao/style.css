@@ -192,18 +192,22 @@ flex-direction: row;
 .save{
   background: #B82216;
   color: #ffffff;
+  font-weight: 400;
 }
 .save:hover {
   background-color: #FE2F18;
   border: 1px solid #15161D;
   color: #15161D;
+  font-weight: 500;
 }
 .cancel{
   background: #f9f8f8;
   border: 1px solid #B82216;
   color:#B82216;
+  font-weight: 400;
 }
 .cancel:hover{
   border: 1px solid #15161D;
   color: #15161D;
+  font-weight: 500;
 }
