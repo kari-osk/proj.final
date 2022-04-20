@@ -7,14 +7,13 @@ import Countdown from "./CountDown";
 
 export default function Home(){
     return(
-<div>
+<div className="tudo_home">
 
         <div>
         <Carousel/>
         </div>
 
         <div className="Novos_Title container">
-            <br/>
             <p>Novos produtos</p>
         </div>
 
@@ -23,19 +22,16 @@ export default function Home(){
         </CardGroup>
 
         <div className="container">
-            <br/><br/>
             <Countdown/>
         </div>
 
         <div className="Novos_Title container">
-            <br/>
             <p>Os mais vendidos</p>
         </div>
 
         <CardGroup className="container group_Maisvendido">
           <CardMaisVendidos/>
         </CardGroup>
-        <br/>
 
 </div>
   

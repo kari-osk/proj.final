@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav } from "react-bootstrap";
 import {BsWhatsapp, BsGithub, BsLinkedin, BsFillEnvelopeFill } from "react-icons/bs";
 import "./style.css";
+import merc from "../../img/merc.svg";
 
 export default function Footer() {
     return (
@@ -11,50 +12,39 @@ export default function Footer() {
             <Navbar.Toggle />
             <Navbar.Collapse className='right-aligned'>
             <div className="container">
-                <div className="row justify-content-md-center">
-
-                    <div className="col col-lg-3">
-                        <h4 className="title_footer">Linkedin Pages</h4>
-                        <ul className="list-unstyled">
-                            <Nav.Link className="link-to" href='https://www.linkedin.com/in/dayana-m-092a32224/' target="_blank" id='mylinkedin' ><BsLinkedin className="Icon-color" /> Dayana</Nav.Link>
-                            <Nav.Link className="link-to" href='https://www.linkedin.com/in/gabrielgpena/' target="_blank" id='mylinkedin' ><BsLinkedin className="Icon-color" /> Gabriel</Nav.Link>
-                            <Nav.Link className="link-to" href='https://www.linkedin.com/in/kantuta/' target="_blank" id='mylinkedin' ><BsLinkedin className="Icon-color" /> Kantuta</Nav.Link>
-                            <Nav.Link className="link-to" href='https://www.linkedin.com/in/karinaosuka/' target="_blank" id='mylinkedin' ><BsLinkedin className="Icon-color" /> Karina</Nav.Link>
-                            <Nav.Link className="link-to" href='https://github.com/luanableal' target="_blank" id='mylinkedin' ><BsLinkedin className="Icon-color" /> Luana</Nav.Link>
-                            <Nav.Link className="link-to" href='https://www.linkedin.com/in/paulo-rossi-95296a4b/' target="_blank" id='mylinkedin' ><BsLinkedin className="Icon-color" /> Paulo</Nav.Link>
-                        </ul>
-                    </div>
-
-                    <div className="col col-lg-3">
-                        <h4 className="title_footer">Github Pages</h4>
-                        <ul className="list-unstyled">
-                            <Nav.Link className="link-to" href='https://github.com/DayanaMiranda' target="_blank" id='mygit' ><BsGithub className="Icon-color" /> Dayana</Nav.Link>
-                            <Nav.Link className="link-to" href='https://github.com/GabrielGPena793' target="_blank" id='mygit' ><BsGithub className="Icon-color" /> Gabriel</Nav.Link>
-                            <Nav.Link className="link-to" href='https://github.com/KantutaMolina' target="_blank" id='mygit' ><BsGithub className="Icon-color" /> Kantuta</Nav.Link>
-                            <Nav.Link className="link-to" href='https://github.com/kari-osk' target="_blank" id='mygit' ><BsGithub className="Icon-color" /> Karina</Nav.Link>
-                            <Nav.Link className="link-to" href='https://github.com/luanableal' target="_blank" id='mygit' ><BsGithub className="Icon-color" /> Luana</Nav.Link>
-                            <Nav.Link className="link-to" href='https://github.com/DubonP' target="_blank" id='mygit' ><BsGithub className="Icon-color" /> Paulo</Nav.Link>
-                            <br/>                            
-                        </ul>
-                    </div>
-
-                    <div className="col col-lg-3"></div>
+                <div className="row justify-content-md-center box_top_footer">
 
                     <div className="col col-lg-2">
-                        <h4 className="title_footer">Contato</h4>
-                        <ul className="list-unstyled">
-                        <Nav.Link className="link-to" href="https://wa.me/550000000000" target="_blank" id='mygit' ><BsWhatsapp className="Icon-color" /> Whatsapp</Nav.Link>
-                        <Nav.Link className="link-to" href="mailto:mercadin@test.com.br?" target="_blank" id='myemail'><BsFillEnvelopeFill className="Icon-color" /> Email</Nav.Link>
-                        </ul>
+                        <img className="merc_logo" src={merc} alt="Logo Merch Tech" />
+                    </div>
+
+                    <div className="col col-lg-3 text-white text-center box_sobre_logo">
+                        <p className="Text_sobre_logo">+ 55 11 9 6106-4451</p>
+                        <p className="Text_sobre_logo">contato@merctech.com.br</p>
+                    </div>
+
+                    <div className="col col-lg-4"></div>
+
+                    <div className="col row-lg-2">
+                        <Nav.Link className="link-to" href="https://wa.me/550000000000" target="_blank" id='mygit' >
+                            <div className="box_icon_footer">
+                                <BsWhatsapp className="Icon-color_footer" />
+                            </div> 
+                        </Nav.Link>
+                        <Nav.Link className="link-to" href="mailto:mercadin@test.com.br?" target="_blank" id='myemail'>
+                            <div className="box_icon_footer">
+                                <BsFillEnvelopeFill className="Icon-color_footer" />
+                            </div>
+                        </Nav.Link>
                     </div>
                     
                 </div>
 
-                <div className="footer-bottom container">
-                    <p className="text-xs-center">
-                        Todos os direitos reservados
-                        &copy;{new Date().getFullYear()}
-                    </p>
+                <div className="container text-white text-center">
+                    <p className="Text_sobre_footer">Merc Tech Varejo do Brasil Ltda. | CNPJ 08.888.440/0001-39</p>
+                    <p className="Text_sobre_footer">Rua Treze de Maio, 3458 Centro, São Paulo/SP CEP: 14870-160</p>
+                    <p className="Text_sobre_footer">Formas de pagamentos aceitas: cartões de crédito '(masterCard, Visa, Elo e American Express) e boleto.'</p>
+                    <p className="Text_sobre_footer">Todos os direitos reservados &copy;{new Date().getFullYear()}</p>
                 </div>
             </div>
             </Navbar.Collapse>

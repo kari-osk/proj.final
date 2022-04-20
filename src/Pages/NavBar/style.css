@@ -2,16 +2,12 @@
     color: #FFF;
 }
 
-#brandname::first-letter{
-    color: rgb(255, 22, 22);
+.merc_logo{
+    height: 90px;
 }
 
 .align-link{
     text-align: center;
-}
-
-#brandname{
-    font-size: 2.8rem;
 }
 
 .link-to {

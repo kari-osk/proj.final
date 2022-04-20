@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav } from "react-bootstrap";
 import {BsCart3, BsHeart, BsHouseDoor, BsTelephoneFill, BsFillEnvelopeFill, BsFillPinFill, BsFillEmojiSmileFill, BsFillKeyFill} from "react-icons/bs";
-
 import "./style.css";
+import merc from "../../img/merc.svg";
 
 export default function NavBar() {
     return (
@@ -15,7 +15,7 @@ export default function NavBar() {
             <p className="SobreNos"><BsTelephoneFill className="Icon-color"/> (00)-0000-0000</p>
           </Nav>
           <Nav className="mx-1">
-            <p className="SobreNos"><BsFillEnvelopeFill className="Icon-color"/> mercadin@test.com.br</p>
+            <p className="SobreNos"><BsFillEnvelopeFill className="Icon-color"/> merctech@test.com.br</p>
           </Nav>
           <Nav className="mx-auto">
             <p className="SobreNos"><BsFillPinFill className="Icon-color"/> 13 Maio, Centro - SP cep:(00000-000)</p>
@@ -24,7 +24,9 @@ export default function NavBar() {
 
         <Navbar className="container" bg="dark" variant="dark"
           sticky="top" expand="sm">
-          <Navbar.Brand id='brandname'>Mercadin</Navbar.Brand>
+          <Navbar.Brand>
+            <img className="merc_logo" src={merc} alt="Logo Merch Tech" />
+          </Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className='right-aligned'>
           <Nav className="mx-auto">
@@ -36,7 +38,6 @@ export default function NavBar() {
           </Nav>
           <Nav className="mx-2">
             <Nav.Link className="align-link" ><BsCart3 className="Icon-color"/><br/><Link className="link-to" to="/cart">Carrinho</Link></Nav.Link>
-            <Nav.Link className="align-link" ><BsHeart className="Icon-color"/><br/><Link className="link-to" to="/fav">Favoritos</Link></Nav.Link>
           </Nav>
           </Navbar.Collapse>
         </Navbar>

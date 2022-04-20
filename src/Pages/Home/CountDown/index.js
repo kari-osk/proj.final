@@ -1,9 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import { Button } from "react-bootstrap";
 import {BsAlarm} from 'react-icons/bs';
 import "./style.css";
+import { getAllProducts } from "../../../Service/Api";
+import { CartContext } from "../../Cart/context/cart";
 
 const Countdown = () => {
+
+  const { productsCart, addProducToCart, removeProductToCart } = useContext(CartContext);
+
   const [timerDays, setTimerDays] = useState('00');
   const [timerHours, setTimerHours] = useState('00');
   const [timerMinutes, setTimerMinutes] = useState('00');
@@ -12,7 +17,7 @@ const Countdown = () => {
   let interval = useRef();
 
   const startTimer = () => {
-    const countDownDate = new Date("April 24, 2022 23:59:59").getTime();
+    const countDownDate = new Date("April 27, 2022 23:59:59").getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();
@@ -44,41 +49,54 @@ const Countdown = () => {
     return () => clearInterval(interval.current);
   });
 
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getAllProducts().then(data => setProducts(data.content));
+  }, []);
+
   return (
+    <div className="container Box_promocao">
+    {products.slice(12, 13).map((product) => (
     <section className="timer-container">
       <div className="timer-box">
       <section className="timer">
         <div>
           <h2>Promoção <BsAlarm/></h2>
+          <h2>{product.title}</h2>
         </div>
         <div className="contador">
           <section>
             <p>{timerDays}</p>
             <p><small>Dias</small></p>
           </section>
-          <span>:</span>
+          <span className="span_timer">:</span>
           <section>
             <p>{timerHours}</p>
             <p><small>Horas</small></p>
           </section>
-          <span>:</span>
+          <span className="span_timer">:</span>
           <section>
             <p>{timerMinutes}</p>
             <p><small>Minutos</small></p>
           </section>
-          <span>:</span>
+          <span className="span_timer">:</span>
           <section>
             <p>{timerSeconds}</p>
             <p><small>Segundos</small></p>
           </section>
         </div>
         <div className="d-grid gap-2">
-        <Button className="button" variant="outline-dark" size="lg">Compre agora</Button>
+        <Button onClick={() => addProducToCart(product.id, product.image)} className="button" variant="outline-dark" size="lg">Compre agora por R$ {product.price}</Button>
         </div>
       </section>
       </div>
-      <div className="img_card"></div>
+      <div className="img_card">
+        <img className="imagem_count" src={product.image}></img>
+      </div>
     </section>
+    ))}
+    </div>
   );
 };
 
