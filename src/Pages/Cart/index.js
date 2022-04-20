@@ -1,4 +1,3 @@
-import { findByTitle } from "@testing-library/react";
 import React, { useState, useContext, useEffect } from "react";
 import { CartContext } from "./context/cart";
 import "../Cart/style.css";

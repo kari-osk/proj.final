@@ -5,35 +5,35 @@ import { CardGroup } from "react-bootstrap";
 import "./style.css";
 import Countdown from "./CountDown";
 
-export default function Home(){
-    return(
-<div className="tudo_home">
+export default function Home() {
+  return (
+    <div className="tudo_home">
 
-        <div>
-        <Carousel/>
-        </div>
+      <div>
+        <Carousel />
+      </div>
 
-        <div className="Novos_Title container">
-            <p>Novos produtos</p>
-        </div>
+      <div className="Novos_Title container">
+        <p>Novos produtos</p>
+      </div>
 
-        <CardGroup className="container">
-          <CardNovos/>
-        </CardGroup>
+      <CardGroup className="container">
+        <CardNovos />
+      </CardGroup>
 
-        <div className="container">
-            <Countdown/>
-        </div>
+      <div className="container">
+        <Countdown />
+      </div>
 
-        <div className="Novos_Title container">
-            <p>Os mais vendidos</p>
-        </div>
+      <div className="Novos_Title container">
+        <p>Os mais vendidos</p>
+      </div>
 
-        <CardGroup className="container group_Maisvendido">
-          <CardMaisVendidos/>
-        </CardGroup>
+      <CardGroup className="container group_Maisvendido">
+        <CardMaisVendidos />
+      </CardGroup>
 
-</div>
-  
+    </div>
+
   );
 }
