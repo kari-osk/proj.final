@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import {BsWhatsapp, BsFillEnvelopeFill } from "react-icons/bs";
 import "./style.css";
@@ -31,9 +32,7 @@ export default function Footer() {
                             </Nav.Link>
                         </div>   
 
-                    </div>                              
-                  
-
+                    </div>                             
                     <div className="container text-white text-center">
                         <p className="Text_sobre_footer">Merc Tech Varejo do Brasil Ltda. | CNPJ 08.888.440/0001-39</p>
                         <p className="Text_sobre_footer">Rua Treze de Maio, 3458 Centro, São Paulo/SP CEP: 14870-160</p>
