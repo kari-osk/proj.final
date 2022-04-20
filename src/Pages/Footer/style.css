@@ -51,7 +51,7 @@
     color: var(--Branco);
 }
 
-@media (max-width: 1405px) {
+/* @media (max-width: 1405px) {
     .box_sobre_logo{
         margin-left: 50px;
     }
@@ -74,4 +74,4 @@
         margin-top: 40px;
         margin-left: 50px;
     }
-}
+} */

@@ -4,7 +4,6 @@ import { BsAlarm } from "react-icons/bs";
 import "./style.css";
 import { getAllProducts } from "../../../Service/Api";
 import { CartContext } from "../../Cart/context/cart";
-import { Link } from "react-router-dom";
 
 const Countdown = () => {
   const { productsCart, addProducToCart, removeProductToCart } =
@@ -114,16 +113,7 @@ const Countdown = () => {
             <img className="imagem_count img-fluid" src={product.image}></img>
           </div>
         </div>
-        <Link to={`/details/${product.id}`}  className="d-grid gap-2">
-          <Button className="button_Timer" variant="outline-dark" size="lg">Compre agora por R$ {product.price}</Button>
-        </Link>
-      </section>
-      </div>
-      <div className="img_card">
-        <img className="imagem_count" src={product.image}></img>
-      </div>
-    </section>
-    ))}
+      ))}
     </div>
   );
 };
