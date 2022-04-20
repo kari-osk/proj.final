@@ -9,8 +9,6 @@ export default function Footer() {
     return (
         <div id="main-footer" className="main-footer bg-dark">
             <Navbar className="container" bg="dark" variant="dark" sticky="botton" expand="sm">
-            <Navbar.Toggle />
-            <Navbar.Collapse className='right-aligned'>
             <div className="container">
                 <div className="row justify-content-md-center box_top_footer">
 
@@ -47,7 +45,6 @@ export default function Footer() {
                     <p className="Text_sobre_footer">Todos os direitos reservados &copy;{new Date().getFullYear()}</p>
                 </div>
             </div>
-            </Navbar.Collapse>
             </Navbar>
         </div>
 );
