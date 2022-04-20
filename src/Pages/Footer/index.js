@@ -1,6 +1,7 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
-import {BsWhatsapp, BsGithub, BsLinkedin, BsFillEnvelopeFill } from "react-icons/bs";
+import {BsWhatsapp, BsFillEnvelopeFill } from "react-icons/bs";
 import "./style.css";
 import merc from "../../img/merc.svg";
 

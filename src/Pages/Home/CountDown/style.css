@@ -16,6 +16,10 @@ body {
   flex: column;
 }
 
+.timer-container a{
+    text-decoration: none;
+}
+
 .button_Timer:hover {
   background-position: right center; /* change the direction of the change here */
   color: var(--Branco);
