@@ -1,12 +1,6 @@
-.cart-title{
-    margin: 1em 0;
-}
-
 .container-items {
     width: 485px;
-    height: 500px;
-    overflow: hidden;
-    overflow-y: scroll;
+    height: 100%;
     
 }
 
@@ -89,6 +83,81 @@ p {
     margin: 0.5em 0 6em; 
     color:rgb(235, 232, 232);  
 }
+
+
+
+@media screen and (max-width: 400px) {
+    .teste2{
+        flex-direction: column;
+        width: 360px;;        
+    }
+    .btn-finish {
+        margin-bottom: 1em;
+        width: 370px;
+    }   
+}
+
+@media screen and (min-width: 401px) and (max-width: 720px) {
+    .teste2{
+        flex-direction: column;
+        width: 470px;        
+    }
+    .btn-finish {
+        margin-bottom: 1em;
+        width: 470px;
+    }     
+}
+
+@media screen and (min-width: 721px) and (max-width: 1200px) {
+    .teste2{
+        flex-direction: column;
+        width: 600px;
+             
+    }      
+    .btn-finish {
+        margin-bottom: 1em;
+        width: 600px;
+    } 
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1280px) {
+    .order-container{        
+        width: 500px;
+        padding-left: 100px;             
+    }      
+    .btn-finish {
+        margin-bottom: 1em;
+        width: 400px;
+    }    
+    .teste{
+        width: 500px;
+    }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
+    .order-container{
+        padding-left: 10em;
+        width: 500px;           
+    }      
+    .btn-finish {
+        margin-bottom: 1em;
+        width: 350px;
+    }    
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1920px) {
+    
+}
+
+@media screen and (min-width: 1921px) {
+    
+}
+
+.section-cart{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
 
 
 

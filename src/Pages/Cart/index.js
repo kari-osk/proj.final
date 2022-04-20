@@ -48,9 +48,6 @@ export default function Cart() {
 
         <div className="section-cart container">
 
-            <div className="cart-title"><h3>Carrinho</h3></div>
-
-
             <div className="teste2">
                 <div className="teste">
                     <div className="container-items">
@@ -64,7 +61,7 @@ export default function Cart() {
                                     <div>
                                         <p className="item-title">{product.title}</p>
                                         <p>{product.category.name}</p>
-                                        <p>Quantidade: {productsCart.find(item => item.id === product.id).quantity}</p>
+                                        <p>Quantidade: {productsCart.find(item => item.id === product.id)?.quantity}</p>
                                         <p>R$ {product.price.toFixed(2)}</p>
                                     </div>
                                     <button onClick={() => removeProductToCart(product.id)}>Remover</button>
