@@ -6,8 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import { getAllProducts } from "../../../Service/Api";
 import { CartContext } from "../../Cart/context/cart";
-import { Link } from 'react-router-dom';
-
 
 export default function Carousel() {
 
@@ -24,9 +22,7 @@ export default function Carousel() {
     <div className='Box_carro' key={product.id}>
       <img className='image_box' src={product.image} onDragStart={handleDragStart} />
       <div className="d-grid gap-2">
-        <Link className='button_carro' to={`/details/${product.id}`}>
-          <Button variant="outline-dark">Comprar por R$ {product.price}</Button>
-        </Link>
+        <Button onClick={() => addProducToCart(product.id, product.image)} className='button_carro' variant="outline-dark">Comprar por R$ {product.price}</Button>
       </div>
     </div>
     ))
