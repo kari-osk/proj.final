@@ -1,169 +1,224 @@
-body{
-    font-size: 100%;
+body {
+  font-size: 100%;
 }
 
-.Box_promocao{
-    margin-bottom: 40px;
+.Box_promocao {
+  margin-bottom: 40px;
 }
 
-.timer-container{
-    background-color: var(--Branco);
-    color: var(--Preto);
-    height: 50vh;
-    border: 1px solid var(--Preto);
-    border-radius: 3px;
-    display: flex;
-    flex: column;
+.timer-container {
+  background-color: var(--Branco);
+  color: var(--Preto);
+  height: 50vh;
+  border: 1px solid var(--Preto);
+  border-radius: 3px;
+  display: flex;
+  flex: column;
 }
 
 .button_Timer:hover {
-    background-position: right center; /* change the direction of the change here */
-   color: var(--Branco);
-   text-decoration: none;
+  background-position: right center; /* change the direction of the change here */
+  color: var(--Branco);
+  text-decoration: none;
 }
 
-.button_Timer{
-    background-image: linear-gradient(to right, var(--VermelhoForte) 0%, var(--Azul)  51%, var(--VermelhoForte)  100%);
-    margin: 10px;
-   padding: 15px 45px;
-   text-align: center;
-   text-transform: uppercase;
-   transition: 0.8s;
-   background-size: 200% auto;
-   color: var(--Preto);   
-   font-weight: 600;         
-   box-shadow: 0 0 20px var(--Branco);
-   border-radius: 10px;
-   display: block;
+.button_Timer {
+  background-image: linear-gradient(
+    to right,
+    var(--VermelhoForte) 0%,
+    var(--Azul) 51%,
+    var(--VermelhoForte) 100%
+  );
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.8s;
+  background-size: 200% auto;
+  color: var(--Preto);
+  font-weight: 600;
+  box-shadow: 0 0 20px var(--Branco);
+  border-radius: 10px;
+  display: block;
 }
 
-.img_card{
-    width: 520px;
-    border-radius: 3px;
-    align-items: center;
-    padding: 20px 0px 20px 0px;
+.img_card {
+  width: 520px;
+  border-radius: 3px;
+  align-items: center;
+  padding: 20px 0px 20px 0px;
 }
 
-.imagem_count{
-    height: 100%;
-    border-radius: 3px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    align-items: center;
+.imagem_count {
+  height: 100%;
+  border-radius: 3px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
 }
 
-.timer-box{
-    height: 80%;
-    width: 90%;
+.timer-box {
+  height: 80%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.timer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 4em;
-    width: 100%;
-    height: 100%;
-    /* transform: rotate(-10deg); */
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4em;
+  width: 100%;
+  height: 100%;
 }
 
-.timer div:first-child{
-    text-align: center;
+.timer div:first-child {
+  text-align: center;
 }
 
-.timer-icon{
-    font-size: 8em;
+.timer-icon {
+  font-size: 8em;
 }
 
-h2{
-    font-weight: 400;
-    font-size: 2.2rem;
+.h2_timer {
+  font-weight: 400; 
+  font-size: 2.2rem;
 }
 
-h2:first-child{
-    color: var(--VermelhoForte);
-    font-size: 3.2rem;
-    font-weight: 600;
+.h2_timer:first-child {
+  color: var(--VermelhoForte);
+  font-size: 3.2rem;
+  font-weight: 600;
 }
 
-.contador{
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    padding: 1em;
-    text-align: center;
+.contador {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 1em;
+  text-align: center;
 }
 
-.span_timer{
-    font-size: 2.8rem;
-    text-align: center;
+.span_timer {
+  font-size: 2.8rem;
+  text-align: center;
 }
 
-section p:first-child {
-    font-size: 2.8rem;
-    text-align: center;
+.p_timer:first-child {
+  font-size: 2.8rem;
+  text-align: center;
 }
 
-@media screen and (max-width: 480px){
-    .contador{
-        margin-left: 2em;
-        margin-right: 2em;
-        padding: 3em 1em;
-    }
+@media screen and (max-width: 480px) {
+  .contador {
+    margin-left: 2em;
+    margin-right: 2em;
+    padding: 3em 1em;
+  }
 }
 
 @media (max-width: 997px) {
-    .span_timer{
-        font-size: 1.8rem;
-    }
+  .span_timer {
+    font-size: 1.8rem;
+  }
 
-    section p:first-child {
-        font-size: 1.8rem;
-    }
+.p_timer:first-child {
+    font-size: 1.8rem;
+  }
 
-    h2{
-        font-weight: 400;
-        font-size: 1.2rem;
-    }
-    
-    h2:first-child{
-        font-size: 2.2rem;
-        font-weight: 600;
-    }
+  .h2_timer {
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
 
-    .button_Timer{
-       margin: 8px;
-       padding: 10px 35px;
-       font-weight: 600;
-       font-size: 1.1rem;       
-    }
+  .h2_timer:first-child {
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
 
+  .button_Timer {
+    margin: 8px;
+    padding: 10px 35px;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 769px) {
-    .span_timer{
-        font-size: 1.5rem;
-    }
+  .span_timer {
+    font-size: 1.5rem;
+  }
 
-    section p:first-child {
-        font-size: 1.5rem;
-    }
+  .p_timer:first-child {
+    font-size: 1.5rem;
+  }
 
-    h2{
-        font-weight: 400;
-        font-size: 1.2rem;
-    }
-    
-    h2:first-child{
-        font-size: 2.2rem;
-        font-weight: 600;
-    }
+  .h2_timer {
+    font-weight: 400;
+    font-size: 1.1rem;
+  }
 
-    .button_Timer{
-       margin: 8px;
-       padding: 10px 35px;
-       font-weight: 600;
-       font-size: 1.1rem;       
-    }
+  .h2_timer:first-child {
+    font-size: 2rem;
+    font-weight: 500;
+  }
 
+  .button_Timer {
+    margin: 8px;
+    padding: 8px 25px;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 507px) {
+  .span_timer {
+    font-size: 1.2rem;
+  }
+
+  .p_timer:first-child {
+    font-size: 1.2rem;
+  }
+
+  .h2_timer {
+    font-weight: 300;
+    font-size: 1rem;
+  }
+
+  .h2_timer:first-child {
+    font-size: 1.7rem;
+    font-weight: 400;
+  }
+
+  .button_Timer {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  .timer-container {
+    height: 760px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+  }
+  .Box_promocao {
+    margin-bottom: 100px;
+    align-items: center;
+    text-align: center;
+  }
+  .img_card {
+    width: 250px;
+    border-radius: 3px;
+    align-items: center;
+    padding: 20px 0px 20px 0px;
+    align-self: center;
+  }
+  .timer-box {
+    align-self: center;
+  }
+  .timer {
+    padding-top: 1em;
+  }
 }
