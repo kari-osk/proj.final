@@ -3,7 +3,7 @@ import { formatMoney } from './useUtils'
 import Modal from 'react-modal'
 import { useEffect, useState } from 'react'
 import { FiEdit, FiTrash, FiX } from 'react-icons/fi'
-import { Table, Container } from 'react-bootstrap'
+import { Table } from 'react-bootstrap'
 
 const customStyles = {
   content: {
@@ -190,87 +190,85 @@ function Admin() {
   // return----------------------------------------------------------------------
 
   return (
-    <div className="Admin">
-      <Container>
-        <section className="admin-header">
-          <h1 className="admin-h1">Lista de produtos</h1>
-          <div className="button-icon-admin">
-            <button
-              className="chevron-left"
-              onClick={() => setPageNumber(pageNumber - 1)}
-              disabled={firstPage}
-            >
-              {' '}
-            </button>
-
-            <span className="pages-number-admin">
-              {pageNumber + 1} - {totalPages}
-            </span>
-            <button
-              className="chevron-right"
-              onClick={() => setPageNumber(pageNumber + 1)}
-              disabled={lastPage}
-            >
-              {' '}
-            </button>
-          </div>
-
-          <button className="button-add-product" onClick={() => mostrarModal()}>
-            Adicionar produto
+    <div className="Admin container">
+      <section className="admin-header">
+        <h1 className="admin-h1">Lista de produtos</h1>
+        <div className="button-icon-admin">
+          <button
+            className="chevron-left"
+            onClick={() => setPageNumber(pageNumber - 1)}
+            disabled={firstPage}
+          >
+            {' '}
           </button>
-        </section>
 
-        <Table striped bordered hover size="sm" responsive="sm">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Categoria</th>
-              <th>Nome</th>
-              <th>Descrição</th>
-              <th>Preço</th>
-              <th>Imagem</th>
-              <th></th>
-            </tr>
-          </thead>
-          {products.map(product => (
-            <>
-              <tbody>
-                <tr>
-                  <td>{product.id}</td>
-                  <td>{product.category.name}</td>
-                  <td>{product.title}</td>
-                  <td className="td-description">{product.description}</td>
-                  <td>{formatMoney(product.price)}</td>
-                  <td>{product.image}</td>
-                  <td>
-                    <FiEdit
-                      className="button-icon-table"
-                      data-toggle="tooltip"
-                      title="Editar"
-                      onClick={() => fillStates(product)}
-                    />
-                  </td>
-                  <td>
-                    <FiTrash
-                      className="button-icon-table"
-                      data-toggle="tooltip"
-                      title="Deletar"
-                      onClick={() => {
-                        const confirmBox = window.confirm(
-                          'Deseja deletar o produto?'
-                        )
-                        if (confirmBox === true) {
-                          deleteProduct(product.id)
-                        }
-                      }}
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </>
-          ))}
-        </Table>
-      </Container>
+          <span className="pages-number-admin">
+            {pageNumber + 1} - {totalPages}
+          </span>
+          <button
+            className="chevron-right"
+            onClick={() => setPageNumber(pageNumber + 1)}
+            disabled={lastPage}
+          >
+            {' '}
+          </button>
+        </div>
+
+        <button className="button-add-product" onClick={() => mostrarModal()}>
+          Adicionar produto
+        </button>
+      </section>
+
+      <Table striped bordered hover size="sm" responsive="sm">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Categoria</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Imagem</th>
+            <th></th>
+          </tr>
+        </thead>
+        {products.map(product => (
+          <>
+            <tbody>
+              <tr>
+                <td>{product.id}</td>
+                <td>{product.category.name}</td>
+                <td>{product.title}</td>
+                <td className="td-description">{product.description}</td>
+                <td>{formatMoney(product.price)}</td>
+                <td>{product.image}</td>
+                <td>
+                  <FiEdit
+                    className="button-icon-table"
+                    data-toggle="tooltip"
+                    title="Editar"
+                    onClick={() => fillStates(product)}
+                  />
+                </td>
+                <td>
+                  <FiTrash
+                    className="button-icon-table"
+                    data-toggle="tooltip"
+                    title="Deletar"
+                    onClick={() => {
+                      const confirmBox = window.confirm(
+                        'Deseja deletar o produto?'
+                      )
+                      if (confirmBox === true) {
+                        deleteProduct(product.id)
+                      }
+                    }}
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </>
+        ))}
+      </Table>
 
       <Modal
         style={customStyles}

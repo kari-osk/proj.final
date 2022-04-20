@@ -1,4 +1,3 @@
-
 .admin {
   display: flex;
   flex: 1;
@@ -27,7 +26,7 @@
 .button-add-product {
   width: 185px;
   height: 48px;
-  background: #da0909;
+  background: #B82216;
   border: none;
   border-radius: 8px;
   margin-bottom: 8px;
@@ -35,9 +34,10 @@
 }
 
 .button-add-product:hover{
-  background:#e92d18;
-  border: 1px solid #0f0e0e;
-  color: #0f0e0e;
+  background:#FE2F18;
+  border: 1px solid #15161D;
+  color: #15161D;
+  font-weight: 500;
 }
 
 .button-icon-admin {
@@ -110,7 +110,7 @@ flex-direction: row;
 
 }
 .button-close-modal:hover{
-  background-color: #da0909;
+  background-color: #B82216;
 }
 
 .form-h1 {
@@ -158,7 +158,6 @@ flex-direction: row;
   border: none;
   border-radius: 4px;
   font-size: 0.9rem;
-  font-family: 'Inter',sans-serif;
 }
 
 
@@ -174,7 +173,6 @@ flex-direction: row;
   border-radius: 4px;
   margin-bottom: 8px;
   font-size: 0.9rem;
-  font-family: 'Inter',sans-serif;
 }
 
 
@@ -192,20 +190,24 @@ flex-direction: row;
   border-radius: 8px;
 }
 .save{
-  background: #da0909;
+  background: #B82216;
   color: #ffffff;
+  font-weight: 400;
 }
 .save:hover {
-  background-color: #e92d18;
-  border: 1px solid #0f0e0e;
-  color: #0f0e0e;
+  background-color: #FE2F18;
+  border: 1px solid #15161D;
+  color: #15161D;
+  font-weight: 500;
 }
 .cancel{
   background: #f9f8f8;
-  border: 1px solid #e92d18;
-  color:#e92d18;
+  border: 1px solid #B82216;
+  color:#B82216;
+  font-weight: 400;
 }
 .cancel:hover{
-  border: 1px solid #0f0e0e;
-  color: #0f0e0e;
+  border: 1px solid #15161D;
+  color: #15161D;
+  font-weight: 500;
 }
