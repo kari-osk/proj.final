@@ -1,5 +1,5 @@
 .box_geral{
-    background-color: rgb(255, 255, 255);
+    background-color: var(--Branco);
     margin-top: 30px;
 }
 

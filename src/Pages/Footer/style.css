@@ -1,5 +1,5 @@
 .title_footer{
-    color: rgb(255, 22, 22);
+    color: var(--VermelhoForte);
 }
 
 .box_top_footer{
@@ -19,19 +19,19 @@
 }
 
 .link-to {
-    color: #FFF;
+    color: var(--Branco);
 }
 
 .link-to:hover {
-    color: rgb(255, 22, 22);
+    color: var(--VermelhoForte);
 }
 
 .Icon-color_footer{
     height: 25px;
     width: 25px;
     margin-top: 7px;
-    background-color: #FFF;
-    color: black;
+    background-color: var(--Branco);
+    color: var(--Preto);
     justify-items: center;
     align-items: center;
     text-align: center;
@@ -40,7 +40,7 @@
 .box_icon_footer{
     height: 40px;
     width: 40px;
-    background-color: #FFF;
+    background-color: var(--Branco);
     justify-items: center;
     align-items: center;
     border-radius: 50%;
@@ -48,5 +48,5 @@
 }
 
 .text-xs-center{
-    color: rgb(255, 255, 255);
+    color: var(--Branco);
 }

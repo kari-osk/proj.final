@@ -1,5 +1,5 @@
 .SobreNos{
-    color: #FFF;
+    color: var(--Branco);
 }
 
 .merc_logo{
@@ -14,9 +14,9 @@
   color: #FFF;
 }
 .link-to:hover {
-   color: rgb(255, 22, 22);
+   color: var(--VermelhoForte);
 }
 
 .Icon-color{
-    color: rgb(255, 22, 22);
+    color: var(--VermelhoForte);
 }

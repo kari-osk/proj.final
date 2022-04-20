@@ -25,7 +25,7 @@ export default function NavBar() {
         <Navbar className="container" bg="dark" variant="dark"
           sticky="top" expand="sm">
           <Navbar.Brand>
-            <img className="merc_logo" src={merc} alt="Logo Merch Tech" />
+          <Link className="link-to" to="/home"><img className="merc_logo" src={merc} alt="Logo Merch Tech" /></Link>
           </Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className='right-aligned'>

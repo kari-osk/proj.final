@@ -87,7 +87,7 @@ const Countdown = () => {
           </section>
         </div>
         <div className="d-grid gap-2">
-        <Button onClick={() => addProducToCart(product.id, product.image)} className="button" variant="outline-dark" size="lg">Compre agora por R$ {product.price}</Button>
+        <Button onClick={() => addProducToCart(product.id, product.image)} className="button_Timer" variant="outline-dark" size="lg">Compre agora por R$ {product.price}</Button>
         </div>
       </section>
       </div>

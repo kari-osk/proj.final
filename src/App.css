@@ -7,3 +7,11 @@
     font-family: 'Nunito', sans-serif;
 }
 
+:root {
+    --VermelhoForte: #B82216;
+    --VermelhoFraco: #FE2F18;
+    --Branco: #ffffff;
+    --Cinza: #d0d0d0;
+    --Preto: #15161D;
+    --Azul: #4d5db9;
+}

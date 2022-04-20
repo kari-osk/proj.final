@@ -1,5 +1,5 @@
 .link-buy:hover {
-    color: rgb(255, 22, 22);
+    color: var(--VermelhoForte);
 }
 
 .group_card{
@@ -11,7 +11,7 @@
 
 .box_cardNovos{
     height: 510px;
-    border: solid 1px #000000;
+    border: solid 1px var(--Preto);
     padding: 0px 10px;
     margin: 8px;
     overflow:unset;
@@ -19,8 +19,8 @@
 }
 
 .box_cardNovos:hover{
-    border: solid 1px #000000;
-    box-shadow: 0px 0px 7px #000000;
+    border: solid 1px var(--Preto);
+    box-shadow: 0px 0px 7px var(--Preto);
 }
 
 .box_imageVovos{
@@ -38,7 +38,7 @@
 .Text_price{
     font-size: 20px;
     font-weight: bold;
-    color: rgb(255, 22, 22);
+    color: var(--VermelhoForte);
     text-align: center;
 }
 
