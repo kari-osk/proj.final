@@ -78,7 +78,7 @@ export default function Cart() {
                     <div className="return-policy">
                         <p className="p1">Política de devolução</p>
                         <p className="p2">O que posso devolver?</p>
-                        <p className="p5">Você pode devolver a maioria dos itens novos não abertos vendidos pela merctech.com.br dentro do prazo de 30 dias após a entrega para obter um reembolso total.</p>
+                        <p className="p5">Você pode devolver a maioria dos itens novos não abertos vendidos pela <a href="http://3.129.57.191/3000">merctech.com.br</a> dentro do prazo de 30 dias após a entrega para obter um reembolso total.</p>
                         <p className="p3">Quando vou receber meu reembolso?</p>
                         <p className="p4">Para cartão de crédito, pode levar até 2 faturas; para Boleto, até 3 dias úteis através da conta bancária fornecida.</p>
                     </div>
