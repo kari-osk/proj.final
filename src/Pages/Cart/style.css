@@ -89,22 +89,22 @@ p {
 @media screen and (max-width: 400px) {
     .teste2{
         flex-direction: column;
-        width: 360px;;        
+        width: 300px;;        
     }
     .btn-finish {
         margin-bottom: 1em;
-        width: 370px;
+        width: 300px;
     }   
 }
 
 @media screen and (min-width: 401px) and (max-width: 720px) {
     .teste2{
         flex-direction: column;
-        width: 470px;        
+        width: 300px;        
     }
     .btn-finish {
         margin-bottom: 1em;
-        width: 470px;
+        width: 300px;
     }     
 }
 
@@ -130,11 +130,25 @@ p {
         width: 400px;
     }    
     .teste{
-        width: 500px;
+        width: 485px;
     }
 }
 
 @media screen and (min-width: 1281px) and (max-width: 1440px) {
+    .order-container{
+        padding-left: 10em;
+        width: 500px;         
+    }      
+    .btn-finish {
+        margin-bottom: 1em;
+        width: 340px;    
+    }
+    .teste{
+        width: 500px;
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1920px) {
     .order-container{
         padding-left: 10em;
         width: 500px;           
@@ -143,14 +157,24 @@ p {
         margin-bottom: 1em;
         width: 350px;
     }    
+    .teste {
+        width: 485px;
+    }
 }
 
-@media screen and (min-width: 1441px) and (max-width: 1920px) {
-    
-}
 
 @media screen and (min-width: 1921px) {
-    
+    .order-container{
+        padding-left: 10em;
+        width: 500px;           
+    }      
+    .btn-finish {
+        margin-bottom: 1em;
+        width: 350px;
+    }    
+    .teste {
+        width: 485px;
+    }    
 }
 
 .section-cart{
