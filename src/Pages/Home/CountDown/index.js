@@ -1,13 +1,11 @@
-import React, { useState, useRef, useEffect, useContext } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { BsAlarm } from "react-icons/bs";
 import "./style.css";
 import { getAllProducts } from "../../../Service/Api";
-import { CartContext } from "../../Cart/context/cart";
+import { Link } from "react-router-dom";
 
 const Countdown = () => {
-  const { productsCart, addProducToCart, removeProductToCart } =
-    useContext(CartContext);
 
   const [timerDays, setTimerDays] = useState("00");
   const [timerHours, setTimerHours] = useState("00");
@@ -98,19 +96,20 @@ const Countdown = () => {
                 </div>
               </div>
               <div className="d-grid gap-2">
-                <Button
-                  onClick={() => addProducToCart(product.id, product.image)}
-                  className="button_Timer"
-                  variant="outline-dark"
-                  size="lg"
-                >
-                  Compre agora por R$ {product.price}
-                </Button>
+                <Link to={`/details/${product.id}`}>
+                  <Button
+                    className="button_Timer"
+                    variant="outline-dark"
+                    size="lg"
+                  >
+                    Compre agora por R$ {product.price}
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
           <div className="img_card">
-            <img className="imagem_count img-fluid" src={product.image}></img>
+            <img className="imagem_count img-fluid" alt={product.title} src={product.image}></img>
           </div>
         </div>
       ))}
