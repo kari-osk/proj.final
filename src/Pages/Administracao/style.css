@@ -26,17 +26,17 @@
 .button-add-product {
   width: 185px;
   height: 48px;
-  background: #B82216;
+  background: var(--VermelhoForte);
   border: none;
   border-radius: 8px;
   margin-bottom: 8px;
-  color: #ffffff;
+  color: var(--Branco);
 }
 
 .button-add-product:hover{
-  background:#FE2F18;
+  background: var(--VermelhoFraco);
   border: 1px solid #15161D;
-  color: #15161D;
+  color: var(--Preto);
   font-weight: 500;
 }
 
@@ -110,7 +110,7 @@ flex-direction: row;
 
 }
 .button-close-modal:hover{
-  background-color: #B82216;
+  background-color: var(--VermelhoForte);
 }
 
 .form-h1 {
@@ -151,6 +151,11 @@ flex-direction: row;
   height: 10rem;
   overflow-y: scroll;
 }
+.td-image {
+  width: auto;
+  overflow: hidden;
+  overflow-y: scroll;
+}
 .select-category {
   height: 32px;
   padding-left: 4px;
@@ -159,7 +164,6 @@ flex-direction: row;
   border-radius: 4px;
   font-size: 0.9rem;
 }
-
 
 .form-span {
   margin-bottom: 4px;
@@ -190,24 +194,39 @@ flex-direction: row;
   border-radius: 8px;
 }
 .save{
-  background: #B82216;
-  color: #ffffff;
+  background: var(--VermelhoForte);
+  color: var(--Branco);
   font-weight: 400;
 }
 .save:hover {
-  background-color: #FE2F18;
-  border: 1px solid #15161D;
-  color: #15161D;
+  background-color: var(--VermelhoFraco);
+  border: 1px solid var(--Preto);
+  color: var(--Preto);
   font-weight: 500;
 }
 .cancel{
-  background: #f9f8f8;
-  border: 1px solid #B82216;
-  color:#B82216;
+  background: transparent;
+  border: 1px solid var(--VermelhoForte);
+  color: var(--VermelhoForte);
   font-weight: 400;
 }
 .cancel:hover{
-  border: 1px solid #15161D;
-  color: #15161D;
+  border: 1px solid var(--Preto);
+  color: var(--Preto);
   font-weight: 500;
+}
+
+@media (max-width:640px) {
+  .admin-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .admin-h1 {
+    font-size: 1.5rem;
+  }
+  .pages-number-admin {
+    font-size: 1rem;
+  }
 }
