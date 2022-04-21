@@ -29,3 +29,21 @@
 .NavBar{
     background-color: var(--Preto);
 }
+
+.container-icon-cart{
+    position: relative;
+
+}
+
+.quantity-cart{
+    position: absolute;
+    right: 10px;
+    top: 1px;
+    background: #ff0000ab;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    height: 1.2rem;
+    width: 1.1rem;
+}
