@@ -35,6 +35,21 @@
 
 }
 
+.container-canvas{
+    background-color: var(--Preto);
+    color: white;
+}
+
+.container-canvas-form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.container-canvas-form button{
+    width: 100%;
+}
+
 .quantity-cart{
     position: absolute;
     right: 10px;

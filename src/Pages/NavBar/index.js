@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav, Offcanvas, Button, FormLabel, FormControl } from "react-bootstrap";
 import { BsCart3, BsHouseDoor, BsTelephoneFill, BsFillEnvelopeFill, BsFillPinFill, BsFillEmojiSmileFill, BsFillKeyFill } from "react-icons/bs";
@@ -9,13 +9,29 @@ import { CartContext } from "../Cart/context/cart";
 
 export default function NavBar() {
   const [ show, setShow ] = useState(false);
+  const [username, setUserName] = useState("")
+  const [password, setPassword] = useState("")
+
+  let navigate = useNavigate();
+
 
   const {productsCart} = useContext(CartContext)
 
-  console.log(productsCart.length)
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  function login(){
+    if(username === "admin" && password === "admin"){
+      navigate("../admin", { replace: true });
+      clearFields();
+      handleClose();
+    }
+  }
+
+  function clearFields(){
+    setUserName("");
+    setPassword("");
+  }
 
   return (
     <div className="NavBar">
@@ -54,26 +70,24 @@ export default function NavBar() {
         </Navbar>
 
 
-        <Offcanvas placement="end" show={show} onHide={handleClose} >
+        <Offcanvas className="container-canvas" placement="end" show={show} onHide={handleClose} >
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>Login</Offcanvas.Title>
           </Offcanvas.Header>
-          <Offcanvas.Body>
+          <Offcanvas.Body className="container-canvas-form">
             <div>
               <FormLabel to="#login">Username</FormLabel>
-              <FormControl id="login" placeholder="Login" />
+              <FormControl value={username} onChange={(e)=> setUserName(e.target.value)}  id="login" placeholder="Login" />
             </div>
             <div>
               <FormLabel>Passoword</FormLabel>
-              <FormControl placeholder="Password" />
+              <FormControl value={password} onChange={(e)=> setPassword(e.target.value)} placeholder="Password" />
             </div>
-            <Link to="/admin">
-              <Button onClick={handleClose} Button>Entrar</Button>
-            </Link>
+              <Button onClick={login} Button>Entrar</Button>
+              <hr/>
+              <p>Simulação de login, para acessar a sessão de administração, coloque: <br/> <b>login:</b> admin <br/> <b>senha:</b>  admin</p>
           </Offcanvas.Body>
         </Offcanvas>
-
-
       </header>
     </div>
 
