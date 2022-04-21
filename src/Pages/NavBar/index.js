@@ -48,7 +48,7 @@ export default function NavBar() {
               <Nav.Link onClick={handleShow} className="align-link" ><a className="link-to"><BsFillKeyFill className="Icon-color" /><br />Admin</a></Nav.Link>
             </Nav>
             <Nav className="mx-2">
-              <Nav.Link className="align-link" ><span>{productsCart.length || 0}</span><BsCart3 className="Icon-color cart-count" /><br /><Link className="link-to" to="/cart">Carrinho</Link></Nav.Link>
+              <Nav.Link className="align-link container-icon-cart" ><span className="quantity-cart">{productsCart.length || 0}</span><BsCart3 className="Icon-color cart-count" /><br /><Link className="link-to" to="/cart">Carrinho</Link></Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
