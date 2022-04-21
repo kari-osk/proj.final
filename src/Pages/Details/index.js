@@ -35,7 +35,7 @@ export default function Details() {
 
       
       <div className="container-up container-fluid">
-        <div className="container-img container-fluid ">
+        <div className="container-img container-fluid">
           <img src={producto.image} className="img-fluid" alt="foto produto" />
         </div>
 
@@ -50,9 +50,9 @@ export default function Details() {
           <h4>Quantidade</h4>
 
           <div className="quantity-button">
-            <button className='button' onClick={()=>handleAddQuantidade()}> - </button>
+            <button className="button" onClick={()=>handleAddQuantidade()}> - </button>
             <span className="quantities">{quantidade}</span>
-            <button className='button' onClick={()=>setQuantidade(quantidade+1)}> + </button>
+            <button className="button" onClick={()=>setQuantidade(quantidade+1)}> + </button>
           </div>
 
           <div className="container-fluid text-center">
