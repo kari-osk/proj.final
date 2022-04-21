@@ -65,27 +65,28 @@
     color: var(--Branco);
 }
 
-/* @media (max-width: 1405px) {
-    .box_sobre_logo{
-        margin-left: 50px;
+@media (max-width: 540px) {
+    .container-contato{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .box_mail_whats{
+        margin-top: 17px;
     }
 }
 
-@media (max-width: 1205px) {
-    .box_sobre_logo{
-        margin-left: 80px;
+@media (max-width: 416px) {
+    .box_logo_contato{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    .box_mail_whats{
+        justify-content: center;
+    }
+    .text_foter_info{
+        margin-top: 50px;
     }
 }
-
-@media (max-width: 1005px) {
-    .box_sobre_logo{
-        margin-left: 50px;
-    }
-}
-
-@media (max-width: 768px) {
-    .box_sobre_logo{
-        margin-top: 40px;
-        margin-left: 50px;
-    }
-} */
