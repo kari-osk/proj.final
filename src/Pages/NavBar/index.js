@@ -4,10 +4,15 @@ import { Navbar, Nav, Offcanvas, Button, FormLabel, FormControl } from "react-bo
 import { BsCart3, BsHouseDoor, BsTelephoneFill, BsFillEnvelopeFill, BsFillPinFill, BsFillEmojiSmileFill, BsFillKeyFill } from "react-icons/bs";
 import "./style.css";
 import merc from "../../img/merc.svg";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../Cart/context/cart";
 
 export default function NavBar() {
-  const [show, setShow] = useState(false);
+  const [ show, setShow ] = useState(false);
+
+  const {productsCart} = useContext(CartContext)
+
+  console.log(productsCart.length)
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -40,10 +45,10 @@ export default function NavBar() {
             <Nav className="mx-5">
               <Nav.Link className="align-link" ><BsHouseDoor className="Icon-color" /><br /><Link className="link-to" to="/home">Home</Link></Nav.Link>
               <Nav.Link className="align-link" ><BsFillEmojiSmileFill className="Icon-color" /><br /><Link className="link-to" to="/sobrenos">Sobre</Link></Nav.Link>
-              <Nav.Link onClick={handleShow} className="align-link" ><BsFillKeyFill className="Icon-color" /><br />Admin</Nav.Link>
+              <Nav.Link onClick={handleShow} className="align-link" ><a className="link-to"><BsFillKeyFill className="Icon-color" /><br />Admin</a></Nav.Link>
             </Nav>
             <Nav className="mx-2">
-              <Nav.Link className="align-link" ><BsCart3 className="Icon-color" /><br /><Link className="link-to" to="/cart">Carrinho</Link></Nav.Link>
+              <Nav.Link className="align-link" ><span>{productsCart.length || 0}</span><BsCart3 className="Icon-color cart-count" /><br /><Link className="link-to" to="/cart">Carrinho</Link></Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
