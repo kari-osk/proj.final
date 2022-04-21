@@ -1,9 +1,10 @@
 import "./style.css";
 import { BiCheckShield } from "react-icons/bi";
 import { RiTruckFill } from "react-icons/ri";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-
+import { useState, useEffect, useContext } from "react";
+import { useParams, Link } from "react-router-dom";
+import { CartContext } from "../Cart/context/cart";
+import { Card, Button } from "react-bootstrap";
 
 export default function Details() {
 
@@ -11,6 +12,7 @@ export default function Details() {
 
   const[quantidade, setQuantidade] =useState(1);
   const [producto, setProduct] = useState({});
+  const {addProducToCart, addProducToCartWithQuantity} = useContext(CartContext);
 
   useEffect(() => {
     getProductsByid();
@@ -28,7 +30,6 @@ export default function Details() {
     }	
   }
 
-
   return (
     <section id="products" className="container">
 
@@ -40,27 +41,28 @@ export default function Details() {
 
         <div className="container-product container-fluid">
           <h3>{producto.title}</h3>
-          <h3>Valor: R$ {producto.price}</h3>
-          <h3>parcele em 12x sem juros </h3>
-          <h4>
-            <RiTruckFill size={25} color="black" /> Envio para todo o país
-          </h4>
+          <h3><strong>Valor: R$ {producto.price}</strong></h3>
+          <h5>Parcele em 12x sem juros </h5>
+          <h6>
+            <RiTruckFill size={20} color="black" /> Envio para todo o país
+          </h6>
        
           <h4>Quantidade</h4>
 
           <div className="quantity-button">
-            <span>{quantidade}</span>
-            <button className='button' onClick={()=>setQuantidade(quantidade+1)}> + </button>
             <button className='button' onClick={()=>handleAddQuantidade()}> - </button>
+            <span className="quantities">{quantidade}</span>
+            <button className='button' onClick={()=>setQuantidade(quantidade+1)}> + </button>
           </div>
 
           <div className="container-fluid text-center">
-            <button className="button-buy"> Comprar agora </button>
-            <button className="button-add"> Adicionar ao carrinho </button>
+
+          <Link to="/cart"><Button onClick={() => addProducToCartWithQuantity(producto.id, quantidade)} className="button-add" variant="outline-dark" size="lg">Adicionar ao carrinho</Button></Link>
+ 
           </div>
-          <h4>
-            <BiCheckShield size={25} color="black" /> 90 dias de garantia
-          </h4>
+          <h6>
+            <BiCheckShield size={20} color="black" /> 90 dias de garantia
+          </h6>
         </div>
       
       </div> 

@@ -20,3 +20,7 @@
 .Icon-color{
     color: var(--VermelhoForte);
 }
+
+.NavBar{
+    background-color: var(--Preto);
+}

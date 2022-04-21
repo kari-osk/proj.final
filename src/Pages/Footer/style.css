@@ -1,3 +1,7 @@
+.main-footer{
+    background-color: var(--Preto);
+}
+
 .title_footer{
     color: var(--VermelhoForte);
 }
@@ -14,8 +18,8 @@
     padding: 3px;
 }
 
-.box_sobre_logo{
-    margin-top: 17px;
+.box_sobre_logo {
+    margin-left: 50px;
 }
 
 .link-to {
@@ -47,6 +51,41 @@
     text-align: center;
 }
 
+.container-contato{
+    height: 56px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+.container-contato img{
+    height: auto;
+}
+
 .text-xs-center{
     color: var(--Branco);
 }
+
+/* @media (max-width: 1405px) {
+    .box_sobre_logo{
+        margin-left: 50px;
+    }
+}
+
+@media (max-width: 1205px) {
+    .box_sobre_logo{
+        margin-left: 80px;
+    }
+}
+
+@media (max-width: 1005px) {
+    .box_sobre_logo{
+        margin-left: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .box_sobre_logo{
+        margin-top: 40px;
+        margin-left: 50px;
+    }
+} */
