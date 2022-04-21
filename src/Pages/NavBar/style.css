@@ -4,10 +4,15 @@
 
 .merc_logo{
     height: 90px;
+    width: 140px;
 }
 
 .align-link{
     text-align: center;
+}
+
+.cart-count{
+    position: relative;
 }
 
 .link-to {
