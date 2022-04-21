@@ -219,154 +219,158 @@ function Admin() {
         </button>
       </section>
 
-      <Table striped bordered hover size="sm" responsive="sm">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Categoria</th>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Preço</th>
-            <th>Imagem</th>
-            <th></th>
-          </tr>
-        </thead>
-        {products.map(product => (
-          <>
-            <tbody>
-              <tr>
-                <td>{product.id}</td>
-                <td>{product.category.name}</td>
-                <td>{product.title}</td>
-                <td className="td-description">{product.description}</td>
-                <td>{formatMoney(product.price)}</td>
-                <td className="td-image">{product.image}</td>
-                <td>
-                  <FiEdit
-                    className="button-icon-table"
-                    data-toggle="tooltip"
-                    title="Editar"
-                    onClick={() => fillStates(product)}
-                  />
-                </td>
-                <td>
-                  <FiTrash
-                    className="button-icon-table"
-                    data-toggle="tooltip"
-                    title="Deletar"
-                    onClick={() => {
-                      const confirmBox = window.confirm(
-                        'Deseja deletar o produto?'
-                      )
-                      if (confirmBox === true) {
-                        deleteProduct(product.id)
-                      }
-                    }}
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </>
-        ))}
-      </Table>
+      <div className="admin_table">
+        <Table striped bordered hover size="sm" responsive="sm">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Categoria</th>
+              <th>Nome</th>
+              <th>Descrição</th>
+              <th>Preço</th>
+              <th>Imagem</th>
+              <th></th>
+            </tr>
+          </thead>
+          {products.map(product => (
+            <>
+              <tbody>
+                <tr>
+                  <td>{product.id}</td>
+                  <td>{product.category.name}</td>
+                  <td>{product.title}</td>
+                  <td className="td-description">{product.description}</td>
+                  <td>{formatMoney(product.price)}</td>
+                  <td className="td-image">{product.image}</td>
+                  <td>
+                    <FiEdit
+                      className="button-icon-table"
+                      data-toggle="tooltip"
+                      title="Editar"
+                      onClick={() => fillStates(product)}
+                    />
+                  </td>
+                  <td>
+                    <FiTrash
+                      className="button-icon-table"
+                      data-toggle="tooltip"
+                      title="Deletar"
+                      onClick={() => {
+                        const confirmBox = window.confirm(
+                          'Deseja deletar o produto?'
+                        )
+                        if (confirmBox === true) {
+                          deleteProduct(product.id)
+                        }
+                      }}
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </>
+          ))}
+        </Table>
+      </div>
 
-      <Modal
-        style={customStyles}
-        isOpen={visibleModal}
-        onRequestClose={() => setVisibleModal(false)}
-      >
-        <FiX
-          data-toggle="tooltip"
-          title="Fechar"
-          className="button-close-modal"
-          onClick={() => setVisibleModal(false)}
-        />
-        <h1 className="form-h1">Cadastro de novos produtos</h1>
-        <form className="form-admin">
-          {/* onSubmit={id ? editProduct : newProduct} */}
-          <div className="div-form">
-            <label className="form-label">
-              <span className="form-span">Selecione a categoria</span>
-              <select
-                className="select-category"
-                onChange={e => setCategory(e.target.value)}
-              >
-                <option value="0">Selecione a categoria</option>
-                {categories.map(category => (
-                  <option value={category.id}>{category.name}</option>
-                ))}
-              </select>
-            </label>
+      <div className="admin-modal">
+        <Modal
+          style={customStyles}
+          isOpen={visibleModal}
+          onRequestClose={() => setVisibleModal(false)}
+        >
+          <FiX
+            data-toggle="tooltip"
+            title="Fechar"
+            className="button-close-modal"
+            onClick={() => setVisibleModal(false)}
+          />
+          <h1 className="form-h1">Cadastro de novos produtos</h1>
+          <form className="form-admin">
+            {/* onSubmit={id ? editProduct : newProduct} */}
+            <div className="div-form">
+              <label className="form-label">
+                <span className="form-span">Selecione a categoria</span>
+                <select
+                  className="select-category"
+                  onChange={e => setCategory(e.target.value)}
+                >
+                  <option value="0">Selecione a categoria</option>
+                  {categories.map(category => (
+                    <option value={category.id}>{category.name}</option>
+                  ))}
+                </select>
+              </label>
 
-            <label className="form-label">
-              <span className="form-span">Nome do produto</span>
-              <input
-                className="form-input"
-                placeholder="Nome do produto"
-                value={title}
-                onChange={event => setTitle(event.target.value)}
-              ></input>
-            </label>
+              <label className="form-label">
+                <span className="form-span">Nome do produto</span>
+                <input
+                  className="form-input"
+                  placeholder="Nome do produto"
+                  value={title}
+                  onChange={event => setTitle(event.target.value)}
+                ></input>
+              </label>
 
-            <label className="form-label">
-              <span className="form-span">Descrição</span>
-              <input
-                className="form-input"
-                placeholder="Descrição"
-                value={description}
-                onChange={event => setDescription(event.target.value)}
-              ></input>
-            </label>
+              <label className="form-label">
+                <span className="form-span">Descrição</span>
+                <input
+                  className="form-input"
+                  placeholder="Descrição"
+                  value={description}
+                  onChange={event => setDescription(event.target.value)}
+                ></input>
+              </label>
 
-            <label className="form-label">
-              <span className="form-span">Preço</span>
-              <input
-                className="form-input"
-                type="number"
-                placeholder="Preço"
-                value={price}
-                onChange={event => setPrice(event.target.value)}
-              ></input>
-            </label>
-            <label className="form-label">
-              <span className="form-span">Imagem</span>
-              <input
-                className="form-input"
-                placeholder="Imagem"
-                value={image}
-                onChange={event => setImage(event.target.value)}
-              ></input>
-            </label>
+              <label className="form-label">
+                <span className="form-span">Preço</span>
+                <input
+                  className="form-input"
+                  type="number"
+                  placeholder="Preço"
+                  value={price}
+                  onChange={event => setPrice(event.target.value)}
+                ></input>
+              </label>
+              <label className="form-label">
+                <span className="form-span">Imagem</span>
+                <input
+                  className="form-input"
+                  placeholder="Imagem"
+                  value={image}
+                  onChange={event => setImage(event.target.value)}
+                ></input>
+              </label>
+            </div>
+          </form>
+
+          <div className="container-buttons">
+            <button
+              style={{ display: displaySalvar }}
+              className="button-form save"
+              type="submit"
+              onClick={() => newProduct()}
+            >
+              Salvar
+            </button>
+            <button
+              style={{ display: displayAlterar }}
+              className="button-form save"
+              type="submit"
+              onClick={() => editProduct()}
+            >
+              Alterar
+            </button>
+
+            <button
+              className="button-form cancel"
+              type="button"
+              onClick={clearStates}
+            >
+              Limpar
+            </button>
           </div>
-        </form>
-
-        <div className="container-buttons">
-          <button
-            style={{ display: displaySalvar }}
-            className="button-form save"
-            type="submit"
-            onClick={() => newProduct()}
-          >
-            Salvar
-          </button>
-          <button
-            style={{ display: displayAlterar }}
-            className="button-form save"
-            type="submit"
-            onClick={() => editProduct()}
-          >
-            Alterar
-          </button>
-
-          <button
-            className="button-form cancel"
-            type="button"
-            onClick={clearStates}
-          >
-            Limpar
-          </button>
-        </div>
-      </Modal>
+        </Modal>
+      </div>
     </div>
   )
 }

@@ -34,10 +34,8 @@
 }
 
 .button-add-product:hover{
-  background: var(--VermelhoFraco);
-  border: 1px solid #15161D;
-  color: var(--Preto);
-  font-weight: 500;
+  background: #212529;
+  color: var(--Branco);
 }
 
 .button-icon-admin {
@@ -98,6 +96,10 @@ flex-direction: row;
 .pages-number-admin {
   padding: 6px 12px;
   font-size: 18px;
+}
+
+.admin_table{
+  overflow-x: auto;
 }
 
 .button-close-modal{
@@ -187,7 +189,12 @@ flex-direction: row;
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
+} 
+
+.admin-modal {
+  z-index: 3000;
 }
+
 .button-form{
   width: 100px;
   height: 48px;
@@ -200,10 +207,8 @@ flex-direction: row;
   font-weight: 400;
 }
 .save:hover {
-  background-color: var(--VermelhoFraco);
-  border: 1px solid var(--Preto);
-  color: var(--Preto);
-  font-weight: 500;
+  background-color: #212529;
+  color: var(--Branco);
 }
 .cancel{
   background: transparent;
@@ -212,9 +217,9 @@ flex-direction: row;
   font-weight: 400;
 }
 .cancel:hover{
-  border: 1px solid var(--Preto);
+  border: 2px solid var(--Preto);
   color: var(--Preto);
-  font-weight: 500;
+  font-weight: 700;
 }
 
 @media (max-width:640px) {
