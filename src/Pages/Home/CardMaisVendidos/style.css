@@ -1,14 +1,16 @@
 .link-buy:hover {
     color: var(--VermelhoForte);
 }
-
+.group_card{
+    padding: 10px 0 42px;
+}
 .box_card{
-    width: 390px;
-    height: 600px;
+    width: 375px;
+    height: 500px;
     border: solid 1px var(--Preto);
-    padding: 0px 10px;
-    margin: 8px;
-    overflow:unset;
+    padding: 0 10px;
+    margin: 10px;
+    overflow: unset;
     align-items: center;
 }
 
@@ -27,11 +29,12 @@
 }
 
 .box_imageMaisvend{
-    height: 300px;
+    height: 250px;
 }
 
 .image_maisvend{
     height: 100%;
+    padding: 22px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
