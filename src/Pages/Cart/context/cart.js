@@ -22,6 +22,23 @@ export default function CartProvider({ children }) {
     setProductsCart(copyProductsCart);
   }
 
+  function addProducToCartWithQuantity(id, quantity) {
+    const copyProductsCart = [...productsCart];
+
+    const item = copyProductsCart.filter((product) => product.id === id);
+
+    if (item.length > 0) {
+      item[0].quantity = quantity;
+      alert("Adicionado ao carrinho novamente!");
+    } else {
+      copyProductsCart.push({ id: id, quantity: quantity});
+      alert("Adicionado ao carrinho");
+    }
+    
+    setProductsCart(copyProductsCart);
+  }
+
+
   function removeProductToCart(id) {
     const copyProductsCart = [...productsCart];
 
@@ -45,7 +62,7 @@ export default function CartProvider({ children }) {
 
   return (
     <CartContext.Provider
-      value={{ productsCart, addProducToCart, removeProductToCart }}
+      value={{ productsCart, addProducToCart, removeProductToCart, addProducToCartWithQuantity }}
     >
       {children}
     </CartContext.Provider>
