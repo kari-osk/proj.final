@@ -240,7 +240,7 @@ function Admin() {
                 <td>{product.title}</td>
                 <td className="td-description">{product.description}</td>
                 <td>{formatMoney(product.price)}</td>
-                <td>{product.image}</td>
+                <td className="td-image">{product.image}</td>
                 <td>
                   <FiEdit
                     className="button-icon-table"
