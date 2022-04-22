@@ -3,6 +3,7 @@ import './style.css'
 import { useEffect, useState } from 'react'
 import { getAllProducts } from '../../../Service/Api'
 import { Link } from 'react-router-dom'
+import { formatMoney } from '../../Administracao/useUtils'
 
 export default function CardNovos() {
   const [products, setProducts] = useState([])
@@ -30,13 +31,13 @@ export default function CardNovos() {
           <Card.Body>
             <Card.Title>{product.title}</Card.Title>
             <Card.Text className="Text_price">
-              Apenas R$ {product.price}
+              Apenas {formatMoney(product.price)}
             </Card.Text>
             <Card.Footer>
               <div className="d-grid gap-2 Box_botao_novos">
                 <Link to={`/details/${product.id}`}>
                   <Button className="link-buy" variant="outline-dark" size="lg">
-                    Comprar por R$ {product.price}
+                    Comprar por {formatMoney(product.price)}
                   </Button>
                 </Link>
               </div>

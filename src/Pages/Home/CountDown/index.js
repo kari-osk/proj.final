@@ -4,6 +4,7 @@ import { BsAlarm } from "react-icons/bs";
 import "./style.css";
 import { getAllProducts } from "../../../Service/Api";
 import { Link } from "react-router-dom";
+import { formatMoney } from "../../Administracao/useUtils";
 
 const Countdown = () => {
 
@@ -102,7 +103,7 @@ const Countdown = () => {
                     variant="outline-dark"
                     size="lg"
                   >
-                    Compre agora por R$ {product.price}
+                    Compre agora por {formatMoney(product.price)}
                   </Button>
                 </Link>
               </div>

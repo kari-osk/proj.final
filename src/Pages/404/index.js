@@ -1,34 +1,34 @@
 import React, { useEffect, useState, useMemo} from "react";
 import "./style.css";
 import Particles from "react-tsparticles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import planeta from "./assets/planeta.svg";
 import astronauta from "./assets/astronauta.svg";
+import { loadFull } from "tsparticles";
 
 export default function NotFound() {
 
-    let [time, setTime] = useState(15);
+    let [time, setTime] = useState(10);
+    let navigate = useNavigate()
   
     useEffect(()=>{
      
       setTimeout(() => {
         setTime(--time)
         if(time === 0){
-          window.location.href = 'http://localhost:3000/';
+          navigate('../', { replace: true })
         }
       }, 1000)
   
     })
   
-  
-    const particlesInit = (main) => {
-      console.log(main);
+    const particlesInit = async (main) => {
+      await loadFull(main);
     };
   
     const particlesLoaded = (container) => {
       console.log(container);
     };
-  
   
     //colocando o componente em memória para ele não renderizar sempre que acontecer uma mundaça que não seja nele
     const particulas = useMemo(()=> (<Particles
@@ -156,7 +156,7 @@ export default function NotFound() {
           <div className="denied__wrapper">
             <h1>404</h1>
             <h3>
-              Está perido na <span>LOJA</span> Merc Tech? Hmm, parece que está pagina não existe.
+              Está perdido na <span>LOJA</span> Merc Tech? Hmm, parece que está pagina não existe.
             </h3>
             <img className="saturn" id="astronaut" src={astronauta} alt="Astronauta" />
             <img className="saturn" src={planeta} alt="Planeta vermelho, com estralas ao redor" />

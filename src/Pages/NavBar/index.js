@@ -55,27 +55,29 @@ export default function NavBar() {
   return (
     <div className="NavBar">
       <header className="App-header">
-        <Navbar className="container" variant="dark" expand="sm">
-          <Nav className="mx-auto">
-            <p className="SobreNos">
-              <BsTelephoneFill className="Icon-color" /> (11) 9 6106-4451
-            </p>
-          </Nav>
-          <Nav className="mx-1">
-            <p className="SobreNos">
-              <BsFillEnvelopeFill className="Icon-color" />{' '}
-              contato@merctech.com.br
-            </p>
-          </Nav>
-          <Nav className="mx-auto">
-            <p className="SobreNos">
-              <BsFillPinFill className="Icon-color" /> Treze de Maio, 3458
-              Centro - SP CEP: 14870-160
-            </p>
-          </Nav>
-        </Navbar>
+        <div className='container-background'>
+          <Navbar className="container" variant="dark" expand="sm">
+            <Nav className="mx-auto">
+              <p className="SobreNos">
+                <BsTelephoneFill className="Icon-color" /> (11) 9 6106-4451
+              </p>
+            </Nav>
+            <Nav className="mx-1">
+              <p className="SobreNos">
+                <BsFillEnvelopeFill className="Icon-color" />{' '}
+                contato@merctech.com.br
+              </p>
+            </Nav>
+            <Nav className="mx-auto">
+              <p className="SobreNos">
+                <BsFillPinFill className="Icon-color" /> Treze de Maio, 3458
+                Centro - SP CEP: 14870-160
+              </p>
+            </Nav>
+          </Navbar>
+        </div>
 
-        <Navbar className="container" variant="dark" sticky="top" expand="sm">
+        <Navbar className="container" variant="dark" expand="sm">
           <Navbar.Brand>
             <Link className="link-to" to="/home">
               <img className="merc_logo" src={merc} alt="Logo Merch Tech" />
@@ -100,11 +102,11 @@ export default function NavBar() {
                 </Link>
               </Nav.Link>
               <Nav.Link onClick={handleShow} className="align-link">
-                <a className="link-to">
+                <button className="link-to">
                   <BsFillKeyFill className="Icon-color" />
                   <br />
                   Admin
-                </a>
+                </button>
               </Nav.Link>
             </Nav>
             <Nav className="mx-2">
@@ -119,7 +121,7 @@ export default function NavBar() {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-
+        <hr className='quebra-estilizada' />
         <Offcanvas
           className="container-canvas"
           placement="end"
