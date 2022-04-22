@@ -40,9 +40,10 @@
   display: flex;
   justify-content: space-between;
   border: 1px solid;
-  margin: 10px 130px;
   border-radius: 7px;
   overflow: hidden;
+  margin: auto;
+  max-width: 50%;
 }
 
 .button {
@@ -76,11 +77,10 @@
 }
 
 .button-add {
-  width: 378px;
+  width: 100%;
   height: 45px;
   background: var(--VermelhoForte);
   border-radius: 12px;
-  margin: 10px;
 }
 
 #products hr {
@@ -105,4 +105,24 @@
   margin: 10px;
   font-size: 25px;
   font-style: italic;
+}
+
+/* media-queries */
+
+@media (max-width: 1280px) {
+  .container-up {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container-product {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 320px){
+  .button-add{
+    font-size: 1rem;
+  }
 }

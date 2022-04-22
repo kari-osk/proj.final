@@ -49,10 +49,12 @@ export default function Details() {
        
           <h4>Quantidade</h4>
 
-          <div className="quantity-button">
-            <button className="button" onClick={()=>handleAddQuantidade()}> - </button>
-            <span className="quantities">{quantidade}</span>
-            <button className="button" onClick={()=>setQuantidade(quantidade+1)}> + </button>
+          <div className="container-fluid">
+            <div className="quantity-button">
+              <button className="button" onClick={()=>handleAddQuantidade()}> - </button>
+              <span className="quantities">{quantidade}</span>
+              <button className="button" onClick={()=>setQuantidade(quantidade+1)}> + </button>
+            </div>
           </div>
 
           <div className="container-fluid text-center">
