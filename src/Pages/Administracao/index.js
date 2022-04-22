@@ -10,14 +10,18 @@ const customStyles = {
     top: '50%',
     left: '50%',
     right: 'auto',
-    width: 550,
+    width: 400,
     height: 580,
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)'
+    // '@media (min-width: 375px)': {
+    //   width: 370
+    // }
   },
   overlay: {
-    background: 'rgba(0,0,0,0.6)'
+    background: 'rgba(0,0,0,0.6)',
+    zIndex: '9999'
   }
 }
 
