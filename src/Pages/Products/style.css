@@ -82,6 +82,10 @@
     font-weight: bold;
 }
 
-.container-pesquisa{
-
+.container-pagination{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
 }
