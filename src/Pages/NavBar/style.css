@@ -30,6 +30,12 @@
     background-color: var(--Preto);
 }
 
+.NavBar button.link-to{
+    background: none;
+    border: none;
+    text-decoration: underline;
+}
+
 .container-icon-cart{
     position: relative;
 
@@ -62,3 +68,16 @@
     height: 1.2rem;
     width: 1.1rem;
 }
+
+.container-background{
+    background-color: #1e1f29;
+}
+
+hr.quebra-estilizada{
+    margin: 0;
+    background-color: #d10024;
+    border: 0;
+    opacity: 1;
+    height: 0.15rem;
+}
+

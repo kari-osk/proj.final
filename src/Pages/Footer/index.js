@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import {BsWhatsapp, BsFillEnvelopeFill } from "react-icons/bs";
 import "./style.css";

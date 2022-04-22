@@ -1,0 +1,87 @@
+#section-products{
+    display: flex;
+    min-height: 46.2vh;
+}
+
+#section-products a{
+    text-decoration: none;
+    color: var(--Preto);
+}
+
+#section-products aside{
+    padding: 2rem;
+    border: 1px solid #80808073;
+    max-width: 294px;
+    min-width: 210px;
+}
+
+#section-products aside ul{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#section-products aside ul li {
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+#section-products aside  h2{
+    font-size: 1.5rem;
+    font-weight: bold;
+    
+}
+
+#section-products .card-body{
+    max-width: 44rem;
+}
+
+#section-products .card>.list-group {
+    border-top: none;
+}
+
+.products-card{
+    transition: 0.3s;
+}
+
+.products-card:hover{
+    transform: scale(1.005);
+    background-color: rgba(128, 128, 128, 0.199);
+}
+
+
+.container-products-card{
+    gap: 3rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container-products-card img{
+    margin: auto;
+    padding: 2rem;
+    width: 160px;
+    object-fit: contain;
+    background-color: transparent;
+}
+
+.container-products-card .card{
+    flex-direction: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-products-card  .list-group-item{
+    border: none;
+    background-color: transparent;
+}
+
+.list-group-price{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.container-pesquisa{
+
+}
