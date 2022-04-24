@@ -19,7 +19,7 @@ export default function Details() {
   }, []);
 
   async function getProductsByid(){
-    const response = await fetch(`http://3.16.56.233:8080/products/${params.id}`);
+    const response = await fetch(`https://ecommerce-backend-ctd.herokuapp.com/products/${params.id}`);
     const data = await response.json();
     setProduct(data)
   }

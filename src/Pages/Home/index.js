@@ -23,7 +23,7 @@ export default function Home() {
 
   async function getCategory() {
     try {
-      const data = await fetch('http://3.16.56.233:8080/categories')
+      const data = await fetch('https://ecommerce-backend-ctd.herokuapp.com/categories')
       const response = await data.json()
       setCategories(response)
     } catch (error) {
@@ -46,8 +46,8 @@ export default function Home() {
             </Link>
           </li>
           {categories.map(category =>
-            <li>
-              <Link to={`/products/${category.id}`} key={category.id}>
+            <li  key={category.id}>
+              <Link to={`/products/${category.id}`}>
                 {category.name}
               </Link>
             </li>

@@ -19,7 +19,7 @@ export default function CardMaisVendidos({products}) {
           </div>
           <Card.Body>
             <Card.Title>{product.title}</Card.Title>
-            <Card.Text>{product.description}</Card.Text>
+            <Card.Text>{product.description.slice(0, 101)}</Card.Text>
           </Card.Body>
           <Card.Footer className="d-grid gap-2">
             <Link to={`/details/${product.id}`}>
