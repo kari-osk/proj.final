@@ -6,15 +6,20 @@ import "./style.css";
 import Countdown from "./CountDown";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { getAllProducts } from '../../Service/Api.js'
+import Load from "../../components/Load";
+
 
 export default function Home() {
 
   const [categories, setCategories] = useState([])
-
+  const [products, setProducts] = useState([])
 
   useEffect(() => {
+    getAllProducts().then(data => setProducts(data.content))
     getCategory();
   }, [])
+
 
   async function getCategory() {
     try {
@@ -24,6 +29,10 @@ export default function Home() {
     } catch (error) {
       alert('Houve um erro de comunicação com o servidor.', error)
     }
+  }
+
+  if (products.length === 0) {
+    return <Load/>
   }
 
   return (
@@ -48,7 +57,7 @@ export default function Home() {
 
 
       <div>
-        <Carousel />
+        <Carousel  products={products}/>
       </div>
 
       <div className="Novos_Title container">
@@ -56,11 +65,11 @@ export default function Home() {
       </div>
 
       <CardGroup className="container">
-        <CardNovos />
+        <CardNovos products={products}/>
       </CardGroup>
 
       <div className="container">
-        <Countdown />
+        <Countdown products={products} />
       </div>
 
       <div className="Novos_Title container">
@@ -68,7 +77,7 @@ export default function Home() {
       </div>
 
       <CardGroup className="container group_Maisvendido">
-        <CardMaisVendidos />
+        <CardMaisVendidos products={products}/>
       </CardGroup>
 
     </div>

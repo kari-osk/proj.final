@@ -1,16 +1,9 @@
 import { Card, Button } from 'react-bootstrap'
 import './style.css'
-import { useEffect, useState } from 'react'
-import { getAllProducts } from '../../../Service/Api'
 import { Link } from 'react-router-dom'
 import { formatMoney } from '../../Administracao/useUtils'
 
-export default function CardMaisVendidos() {
-  const [products, setProducts] = useState([])
-
-  useEffect(() => {
-    getAllProducts().then(data => setProducts(data.content))
-  }, [])
+export default function CardMaisVendidos({products}) {
 
   return (
     <div className="group_card container">

@@ -1,22 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import "./style.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
-import { getAllProducts } from "../../../Service/Api";
 import { Link } from 'react-router-dom';
 import { formatMoney } from '../../Administracao/useUtils';
 
-export default function Carousel() {
+export default function Carousel({products}) {
 
-  const [products, setProducts] = useState([]);
+
   const handleDragStart = (e) => e.preventDefault();
 
-  useEffect(() => {
-    getAllProducts().then(data => setProducts(data.content));
-  }, []);
-  
   var ProdutosCar = products.slice(11, 15).map((product) => (
     <div className='Box_carro' key={product.id}>
       <img className='image_box' src={product.image} alt={product.title} onDragStart={handleDragStart} />
