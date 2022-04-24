@@ -3,13 +3,14 @@ import { useState, useEffect } from "react"
 import "./style.css"
 import { Link, useParams, useNavigate } from "react-router-dom"
 import { formatMoney } from "../Administracao/useUtils"
-
+import Load from "../../components/Load"
 
 
 export default function Products() {
 
     const [products, setProducts] = useState([])
     const [categories, setCategories] = useState([])
+    const [loading, setLoading] = useState(true)
 
     const [pageNumber, setPageNumber] = useState(0)
     const [totalPages, setTotalPages] = useState(0)
@@ -32,14 +33,13 @@ export default function Products() {
     async function getProducts() {
         try {
             const data = await fetch(
-              `http://3.16.56.233:8080/products?size=10&page=${pageNumber}`
+              `https://ecommerce-backend-ctd.herokuapp.com/products?size=10&page=${pageNumber}`
             )
-            const { content, totalPages, last, first } = await data.json()
+            const { content, totalPages} = await data.json()
       
             setProducts(content)
             setTotalPages(totalPages)
-            // setLastPage(last)
-            // setFirstPage(first)
+            setLoading(false)    
           } catch (error) {
             alert('Houve um erro de comunicação com o servidor.', error)
           }
@@ -47,7 +47,7 @@ export default function Products() {
 
     async function getCategory() {
         try {
-            const data = await fetch('http://3.16.56.233:8080/categories')
+            const data = await fetch('https://ecommerce-backend-ctd.herokuapp.com/categories')
             const response = await data.json()
             setCategories(response)
         } catch (error) {
@@ -57,7 +57,7 @@ export default function Products() {
 
     async function getProductsByCategory(id) {
         try {
-            const data = await fetch(`http://localhost:8080/products/category/${id}`)
+            const data = await fetch(`https://ecommerce-backend-ctd.herokuapp.com/products/category/${id}`)
             const content = await data.json()
             setProducts(content)
         } catch (error) {
@@ -69,6 +69,10 @@ export default function Products() {
         navigate(`../products/${category}`, { replace: true })
     }
 
+
+    if (loading === true) {
+        return <Load/>
+    }
 
     return (
         <section id="section-products" className="container">
@@ -85,7 +89,7 @@ export default function Products() {
                     </ul>
                 </div>
             </aside>
-            <div className=" container-products-card">
+            <div className=" container-products-card"git >
                 <div >
                     {products.map(product =>
 

@@ -2,11 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { BsAlarm } from "react-icons/bs";
 import "./style.css";
-import { getAllProducts } from "../../../Service/Api";
 import { Link } from "react-router-dom";
 import { formatMoney } from "../../Administracao/useUtils";
 
-const Countdown = () => {
+const Countdown = ({products}) => {
 
   const [timerDays, setTimerDays] = useState("00");
   const [timerHours, setTimerHours] = useState("00");
@@ -49,11 +48,6 @@ const Countdown = () => {
     return () => clearInterval(interval.current);
   });
 
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    getAllProducts().then((data) => setProducts(data.content));
-  }, []);
 
   return (
     <div className="container Box_promocao">

@@ -3,7 +3,8 @@ import { formatMoney } from './useUtils'
 import Modal from 'react-modal'
 import { useEffect, useState } from 'react'
 import { FiEdit, FiTrash, FiX } from 'react-icons/fi'
-import { Table } from 'react-bootstrap'
+import { Table} from 'react-bootstrap'
+import Load from '../../components/Load'
 
 const customStyles = {
   content: {
@@ -29,7 +30,7 @@ Modal.setAppElement('#root')
 
 function Admin() {
   const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   const [id, setId] = useState('')
   const [category, setCategory] = useState(0)
@@ -54,10 +55,9 @@ function Admin() {
   }, [pageNumber])
 
   async function getProducts() {
-    setLoading(true)
     try {
       const data = await fetch(
-        `http://3.16.56.233:8080/products?size=5&page=${pageNumber}`
+        `https://ecommerce-backend-ctd.herokuapp.com/products?size=5&page=${pageNumber}`
       )
       const { content, totalPages, last, first } = await data.json()
 
@@ -65,10 +65,10 @@ function Admin() {
       setTotalPages(totalPages)
       setLastPage(last)
       setFirstPage(first)
+      setLoading(false)
     } catch (error) {
       alert('Houve um erro de comunicação com o servidor.', error)
     }
-    setLoading(false)
   }
 
   async function newProduct() {
@@ -86,7 +86,7 @@ function Admin() {
       }
 
       try {
-        await fetch('http://3.16.56.233:8080/products', {
+        await fetch('https://ecommerce-backend-ctd.herokuapp.com/products', {
           method: 'POST',
           headers: {
             Accept: 'application/json',
@@ -108,7 +108,7 @@ function Admin() {
 
   async function deleteProduct(id) {
     try {
-      await fetch('http://3.16.56.233:8080/products/' + id, {
+      await fetch('https://ecommerce-backend-ctd.herokuapp.com/products/' + id, {
         method: 'DELETE'
       })
       // alert('Produto deletado')
@@ -153,7 +153,7 @@ function Admin() {
           price,
           image
         }
-        await fetch('http://3.16.56.233:8080/products', {
+        await fetch('https://ecommerce-backend-ctd.herokuapp.com/products', {
           method: 'PUT',
           headers: {
             Accept: 'application/json',
@@ -182,7 +182,7 @@ function Admin() {
 
   async function getCategory() {
     try {
-      const data = await fetch('http://3.16.56.233:8080/categories')
+      const data = await fetch('https://ecommerce-backend-ctd.herokuapp.com/categories')
       const response = await data.json()
 
       setCategories(response)
@@ -192,6 +192,10 @@ function Admin() {
   }
 
   // return----------------------------------------------------------------------
+
+  if (loading === true) {
+    return <Load/>
+  }
 
   return (
     <div className="Admin container">
