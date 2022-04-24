@@ -18,7 +18,7 @@ export default function Cart() {
     async function getProductsCart() {
         const body = JSON.stringify(productsCart)
 
-        const response = await fetch("http://3.16.56.233:8080/products/productCart", {
+        const response = await fetch("https://ecommerce-backend-ctd.herokuapp.com/products/productCart", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -33,9 +33,7 @@ export default function Cart() {
 
     function sumValues() {
         let sum = 0;
-        products.map(product => {
-            sum += product.price
-        });
+        products.map(product =>  sum += product.price);
         setSum(sum);
     }
 
@@ -84,7 +82,7 @@ export default function Cart() {
                 <div className="order-container">
                     <p className="order">Pedido</p>
                     <form>
-                    <label for="default0">Cupom de desconto</label>
+                    <label htmlFor="default0">Cupom de desconto</label>
                     <input type="text" id="default0" class="form-control"></input>
                     </form>
                     <button className="btn-cupon" onClick={btncupon}>Inserir cupom</button>
