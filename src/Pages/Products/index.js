@@ -60,6 +60,7 @@ export default function Products() {
             const data = await fetch(`https://ecommerce-backend-ctd.herokuapp.com/products/category/${id}`)
             const content = await data.json()
             setProducts(content)
+            setLoading(false)  
         } catch (error) {
             alert('Houve um erro de comunicação com o servidor.', error)
         }
