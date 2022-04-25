@@ -1,57 +1,55 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Button } from "react-bootstrap";
-import { BsAlarm } from "react-icons/bs";
-import "./style.css";
-import { Link } from "react-router-dom";
-import { formatMoney } from "../../Administracao/useUtils";
+import React, { useState, useRef, useEffect } from 'react'
+import { Button } from 'react-bootstrap'
+import { BsAlarm } from 'react-icons/bs'
+import './style.css'
+import { Link } from 'react-router-dom'
+import { formatMoney } from '../../Administracao/useUtils'
 
-const Countdown = ({products}) => {
+const Countdown = ({ products }) => {
+  const [timerDays, setTimerDays] = useState('00')
+  const [timerHours, setTimerHours] = useState('00')
+  const [timerMinutes, setTimerMinutes] = useState('00')
+  const [timerSeconds, setTimerSeconds] = useState('00')
 
-  const [timerDays, setTimerDays] = useState("00");
-  const [timerHours, setTimerHours] = useState("00");
-  const [timerMinutes, setTimerMinutes] = useState("00");
-  const [timerSeconds, setTimerSeconds] = useState("00");
-
-  let interval = useRef();
+  let interval = useRef()
 
   const startTimer = () => {
-    const countDownDate = new Date("April 27, 2022 23:59:59").getTime();
+    const countDownDate = new Date('April 27, 2022 23:59:59').getTime()
 
     interval = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
+      const now = new Date().getTime()
+      const distance = countDownDate - now
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24))
       const hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      )
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000)
 
       if (distance < 0) {
-        clearInterval(interval.current);
-        setTimerDays("00");
-        setTimerHours("00");
-        setTimerMinutes("00");
-        setTimerSeconds("00");
+        clearInterval(interval.current)
+        setTimerDays('00')
+        setTimerHours('00')
+        setTimerMinutes('00')
+        setTimerSeconds('00')
       } else {
-        setTimerDays(days);
-        setTimerHours(hours);
-        setTimerMinutes(minutes);
-        setTimerSeconds(seconds);
+        setTimerDays(days)
+        setTimerHours(hours)
+        setTimerMinutes(minutes)
+        setTimerSeconds(seconds)
       }
-    }, 1000);
-  };
+    }, 1000)
+  }
 
   useEffect(() => {
-    startTimer();
-    return () => clearInterval(interval.current);
-  });
-
+    startTimer()
+    return () => clearInterval(interval.current)
+  })
 
   return (
     <div className="container Box_promocao">
-      {products.slice(12, 13).map((product) => (
+      {products.slice(23, 24).map(product => (
         <div key={product.id} className="timer-container">
           <div className="timer-box">
             <div className="timer">
@@ -104,12 +102,16 @@ const Countdown = ({products}) => {
             </div>
           </div>
           <div className="img_card">
-            <img className="imagem_count img-fluid" alt={product.title} src={product.image}></img>
+            <img
+              className="imagem_count img-fluid"
+              alt={product.title}
+              src={product.image}
+            ></img>
           </div>
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Countdown;
+export default Countdown

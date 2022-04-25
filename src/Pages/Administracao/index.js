@@ -3,7 +3,7 @@ import { formatMoney } from './useUtils'
 import Modal from 'react-modal'
 import { useEffect, useState } from 'react'
 import { FiEdit, FiTrash, FiX } from 'react-icons/fi'
-import { Table} from 'react-bootstrap'
+import { Table } from 'react-bootstrap'
 import Load from '../../components/Load'
 
 const customStyles = {
@@ -108,9 +108,12 @@ function Admin() {
 
   async function deleteProduct(id) {
     try {
-      await fetch('https://ecommerce-backend-ctd.herokuapp.com/products/' + id, {
-        method: 'DELETE'
-      })
+      await fetch(
+        'https://ecommerce-backend-ctd.herokuapp.com/products/' + id,
+        {
+          method: 'DELETE'
+        }
+      )
       // alert('Produto deletado')
       getProducts()
     } catch (error) {
@@ -182,7 +185,9 @@ function Admin() {
 
   async function getCategory() {
     try {
-      const data = await fetch('https://ecommerce-backend-ctd.herokuapp.com/categories')
+      const data = await fetch(
+        'https://ecommerce-backend-ctd.herokuapp.com/categories'
+      )
       const response = await data.json()
 
       setCategories(response)
@@ -194,7 +199,7 @@ function Admin() {
   // return----------------------------------------------------------------------
 
   if (loading === true) {
-    return <Load/>
+    return <Load />
   }
 
   return (
@@ -265,7 +270,7 @@ function Admin() {
                       title="Deletar"
                       onClick={() => {
                         const confirmBox = window.confirm(
-                          'Deseja deletar o produto?'
+                          'Deseja deletar o produto do Banco de dados?'
                         )
                         if (confirmBox === true) {
                           deleteProduct(product.id)
