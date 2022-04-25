@@ -56,7 +56,7 @@ export default function NavBar() {
     <div className="NavBar">
       <header className="App-header">
         <div className='container-background'>
-          <Navbar className="container" variant="dark" expand="sm">
+          <Navbar className="container container-header-contact" variant="dark" expand="sm">
             <Nav className="mx-auto">
               <p className="SobreNos">
                 <BsTelephoneFill className="Icon-color" /> (11) 9 6106-4451
