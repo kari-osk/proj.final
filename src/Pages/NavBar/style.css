@@ -81,3 +81,23 @@ hr.quebra-estilizada{
     height: 0.15rem;
 }
 
+
+
+@media (max-width: 984px){
+    .container-header-contact{
+        font-size: 0.8rem;
+    }
+}
+
+
+@media (max-width: 766px){
+    .container-header-contact{
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 472px){
+    .container-header-contact{
+        display: none;
+    }
+}

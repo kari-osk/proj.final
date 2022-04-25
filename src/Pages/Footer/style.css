@@ -71,21 +71,26 @@
         flex-direction: column;
         justify-content: center;
     }
-    .box_mail_whats{
-        margin-top: 17px;
-    }
-}
 
-@media (max-width: 416px) {
+    .box_logo_contato img {
+        margin: auto;
+        margin-bottom: 0.5rem;
+    }
+    
+    .box_sobre_logo{
+        margin-left: 0;
+    }
     .box_logo_contato{
         display: flex;
         flex-direction: column;
         justify-content: center;
-
+        margin: auto;
     }
+
     .box_mail_whats{
         justify-content: center;
     }
+
     .text_foter_info{
         margin-top: 50px;
     }

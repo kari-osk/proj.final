@@ -7,6 +7,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .box_cardNovos{
@@ -55,4 +56,23 @@
     font-weight: bold;
     text-align: center;
     cursor: pointer;
+}
+
+@media (max-width: 1372px){
+    .box_cardNovos{
+        width: 22rem !important;
+    }
+
+    .group_card{
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 972px){
+    .box_cardNovos{
+        width: 375px !important;
+    }
+
+ 
 }
