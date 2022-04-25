@@ -1,4 +1,4 @@
-import { Card, ListGroupItem, ListGroup, Pagination } from "react-bootstrap"
+import { Card, ListGroupItem, ListGroup, Pagination, Accordion } from "react-bootstrap"
 import { useState, useEffect } from "react"
 import "./style.css"
 import { Link, useParams, useNavigate } from "react-router-dom"
@@ -35,18 +35,18 @@ export default function Products() {
     async function getProducts() {
         try {
             const data = await fetch(
-              `https://ecommerce-backend-ctd.herokuapp.com/products?size=10&page=${pageNumber}`
+                `https://ecommerce-backend-ctd.herokuapp.com/products?size=10&page=${pageNumber}`
             )
-            const { content, totalPages,  last, first } = await data.json()
-      
+            const { content, totalPages, last, first } = await data.json()
+
             setProducts(content)
             setTotalPages(totalPages)
             setLastPage(last)
             setFirstPage(first)
-            setLoading(false)    
-          } catch (error) {
+            setLoading(false)
+        } catch (error) {
             alert('Houve um erro de comunicação com o servidor.', error)
-          }
+        }
     }
 
     async function getCategory() {
@@ -63,12 +63,12 @@ export default function Products() {
     async function getProductsByCategory(id) {
         try {
             const data = await fetch(`https://ecommerce-backend-ctd.herokuapp.com/products/category/${id}?page=${pageNumber}`)
-            const { content, totalPages,  last, first } = await data.json()
+            const { content, totalPages, last, first } = await data.json()
             setProducts(content)
             setTotalPages(totalPages)
             setLastPage(last)
             setFirstPage(first)
-            setLoading(false) 
+            setLoading(false)
         } catch (error) {
             alert('Houve um erro de comunicação com o servidor.', error)
         }
@@ -81,14 +81,14 @@ export default function Products() {
     }
 
     if (loading === true) {
-        return <Load/>
+        return <Load />
     }
 
     return (
         <section id="section-products" className="container">
 
             <aside className="container-pesquisa">
-                <div>
+                <div className="menu-categoria-large">
                     <h2>Categorias</h2>
                     <ul>
                         <li onClick={() => selectCategory("all")}>Todas</li>
@@ -98,6 +98,21 @@ export default function Products() {
 
                     </ul>
                 </div>
+                <Accordion className="menu_categoria" defaultActiveKey="0" flush>
+                    <Accordion.Item eventKey="0">
+                        <Accordion.Header>Categorias</Accordion.Header>
+                        <Accordion.Body>
+                            <ul>
+                                <li onClick={() => selectCategory("all")}>Todas</li>
+                                {categories.map(category =>
+                                    <li onClick={() => selectCategory(category.id)} key={category.id}> {category.name}</li>
+                                )}
+
+                            </ul>
+                        </Accordion.Body>
+                    </Accordion.Item>
+                </Accordion>
+
             </aside>
             <div className=" container-products-card">
                 <div >
@@ -120,19 +135,19 @@ export default function Products() {
                     )}
                 </div>
 
-                    
+
                 <div className="container-pagination">
                     <Pagination >
                         <Pagination.First />
-                        <Pagination.Prev disabled={firstPage} onClick={() => setPageNumber(pageNumber -1)} />
-                        <Pagination.Item active>{pageNumber+1}</Pagination.Item>
+                        <Pagination.Prev disabled={firstPage} onClick={() => setPageNumber(pageNumber - 1)} />
+                        <Pagination.Item active>{pageNumber + 1}</Pagination.Item>
                         {totalPages <= 1 ? "" :
-                        <>
-                            <Pagination.Ellipsis />
-                            <Pagination.Item onClick={() => setPageNumber(totalPages-1)} >{totalPages}</Pagination.Item>
-                        </>
+                            <>
+                                <Pagination.Ellipsis />
+                                <Pagination.Item onClick={() => setPageNumber(totalPages - 1)} >{totalPages}</Pagination.Item>
+                            </>
                         }
-                        <Pagination.Next disabled={lastPage} onClick={() => setPageNumber(pageNumber +1)} />
+                        <Pagination.Next disabled={lastPage} onClick={() => setPageNumber(pageNumber + 1)} />
                         <Pagination.Last />
                     </Pagination>
                 </div>
