@@ -1,7 +1,7 @@
 import Carousel from "./Carousel";
 import CardMaisVendidos from "./CardMaisVendidos";
 import CardNovos from "./CardNovos";
-import { CardGroup } from "react-bootstrap";
+import { Accordion, CardGroup } from "react-bootstrap";
 import "./style.css";
 import Countdown from "./CountDown";
 import { useState, useEffect } from "react";
@@ -32,13 +32,13 @@ export default function Home() {
   }
 
   if (products.length === 0) {
-    return <Load/>
+    return <Load />
   }
 
   return (
     <div className="tudo_home">
 
-      <div className='container-categorias '>
+      <div className='container-categorias'>
         <ul className='container'>
           <li>
             <Link to={`/products/all`}>
@@ -46,7 +46,7 @@ export default function Home() {
             </Link>
           </li>
           {categories.map(category =>
-            <li  key={category.id}>
+            <li key={category.id}>
               <Link to={`/products/${category.id}`}>
                 {category.name}
               </Link>
@@ -54,10 +54,30 @@ export default function Home() {
           )}
         </ul>
       </div>
-
-
+      <Accordion className="menu_categoria_home" defaultActiveKey="0" flush>
+        <Accordion.Item eventKey="0">
+          <Accordion.Header>Categorias</Accordion.Header>
+          <Accordion.Body>
+            <ul className='container'>
+              <li>
+                <Link to={`/products/all`}>
+                  Todos
+                </Link>
+              </li>
+              {categories.map(category =>
+                <li key={category.id}>
+                  <Link to={`/products/${category.id}`}>
+                    {category.name}
+                  </Link>
+                </li>
+              )}
+            </ul>
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
+      
       <div>
-        <Carousel  products={products}/>
+        <Carousel products={products} />
       </div>
 
       <div className="Novos_Title container">
@@ -65,7 +85,7 @@ export default function Home() {
       </div>
 
       <CardGroup className="container">
-        <CardNovos products={products}/>
+        <CardNovos products={products} />
       </CardGroup>
 
       <div className="container">
@@ -77,7 +97,7 @@ export default function Home() {
       </div>
 
       <CardGroup className="container group_Maisvendido">
-        <CardMaisVendidos products={products}/>
+        <CardMaisVendidos products={products} />
       </CardGroup>
 
     </div>
