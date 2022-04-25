@@ -270,7 +270,7 @@ function Admin() {
                       title="Deletar"
                       onClick={() => {
                         const confirmBox = window.confirm(
-                          'Deseja deletar o produto do Banco de dados?'
+                          'Realmente deseja deletar o produto do Banco de Dados?'
                         )
                         if (confirmBox === true) {
                           deleteProduct(product.id)

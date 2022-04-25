@@ -49,7 +49,7 @@ const Countdown = ({ products }) => {
 
   return (
     <div className="container Box_promocao">
-      {products.slice(23, 24).map(product => (
+      {products.slice(13, 14).map(product => (
         <div key={product.id} className="timer-container">
           <div className="timer-box">
             <div className="timer">
